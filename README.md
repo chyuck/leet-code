@@ -1,4 +1,4 @@
-solutions for [LeetCode](https://leetcode.com) problems
+Solutions for [LeetCode](https://leetcode.com) problems
 
 | # | Problem | Solution | Tests |
 | --- | --- | --- | ---|
