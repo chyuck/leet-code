@@ -82,15 +82,15 @@ public class DoublyLinkedList<DataType> {
         }
 
         public Node<DataType> getPrev() {
-            return this.prev;
+            return prev;
         }
 
         public Node<DataType> getNext() {
-            return this.next;
+            return next;
         }
 
         public DataType getData() {
-            return this.data;
+            return data;
         }
     }
 }
