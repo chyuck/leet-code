@@ -2,7 +2,7 @@ package solutions;
 
 import java.util.HashMap;
 
-class TwoSumSolution {
+public class TwoSum {
 
     /**
      * Solution for https://leetcode.com/problems/two-sum problem with
