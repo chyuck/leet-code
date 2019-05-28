@@ -7,10 +7,10 @@ public class TwoSumTests {
 
     @Test public void testExample() {
         // arrange
-        var solution = new TwoSum();
+        final var solution = new TwoSum();
 
         // act
-        var result = solution.twoSum(new int[] { 2, 7, 11, 15 }, 9);
+        final var result = solution.twoSum(new int[] { 2, 7, 11, 15 }, 9);
 
         // assert
         assertArrayEquals(new int[] { 0, 1 }, result);

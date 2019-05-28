@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class LRUCacheTests {
 
     @Test public void testExample() {
-        var cache = new LRUCache(2);
+        final var cache = new LRUCache(2);
 
         cache.put(1, 1);
         cache.put(2, 2);

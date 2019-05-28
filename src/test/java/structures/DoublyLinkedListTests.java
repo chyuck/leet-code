@@ -7,9 +7,9 @@ public class DoublyLinkedListTests {
 
     @Test public void testAddAsLastNodeWhenLinkedListIsEmpty() {
         // arrange
-        var linkedList = new DoublyLinkedList<Integer>();
+        final var linkedList = new DoublyLinkedList<Integer>();
 
-        var node = linkedList.new Node<>(1);
+        final var node = linkedList.new Node<>(1);
 
         // act
         linkedList.addAsLastNode(node);
@@ -24,12 +24,12 @@ public class DoublyLinkedListTests {
 
     @Test public void testAddAsLastNodeWhenLinkedListIsNotEmpty() {
         // arrange
-        var linkedList = new DoublyLinkedList<Integer>();
+        final var linkedList = new DoublyLinkedList<Integer>();
 
-        var node1 = linkedList.new Node<>(1);
+        final var node1 = linkedList.new Node<>(1);
         linkedList.addAsLastNode(node1);
 
-        var node2 = linkedList.new Node<>(2);
+        final var node2 = linkedList.new Node<>(2);
 
         // act
         linkedList.addAsLastNode(node2);
@@ -47,9 +47,9 @@ public class DoublyLinkedListTests {
 
     @Test public void testRemoveNodeWhenLinkedListHasOnlyOneNode() {
         // arrange
-        var linkedList = new DoublyLinkedList<Integer>();
+        final var linkedList = new DoublyLinkedList<Integer>();
 
-        var node = linkedList.new Node<>(1);
+        final var node = linkedList.new Node<>(1);
         linkedList.addAsLastNode(node);
 
         // act
@@ -65,12 +65,12 @@ public class DoublyLinkedListTests {
 
     @Test public void testRemoveNodeWhenNodeIsFirst() {
         // arrange
-        var linkedList = new DoublyLinkedList<Integer>();
+        final var linkedList = new DoublyLinkedList<Integer>();
 
-        var node1 = linkedList.new Node<>(1);
+        final var node1 = linkedList.new Node<>(1);
         linkedList.addAsLastNode(node1);
 
-        var node2 = linkedList.new Node<>(2);
+        final var node2 = linkedList.new Node<>(2);
         linkedList.addAsLastNode(node2);
 
         // act
@@ -89,12 +89,12 @@ public class DoublyLinkedListTests {
 
     @Test public void testRemoveNodeWhenNodeIsLast() {
         // arrange
-        var linkedList = new DoublyLinkedList<Integer>();
+        final var linkedList = new DoublyLinkedList<Integer>();
 
-        var node1 = linkedList.new Node<>(1);
+        final var node1 = linkedList.new Node<>(1);
         linkedList.addAsLastNode(node1);
 
-        var node2 = linkedList.new Node<>(2);
+        final var node2 = linkedList.new Node<>(2);
         linkedList.addAsLastNode(node2);
 
         // act
@@ -113,15 +113,15 @@ public class DoublyLinkedListTests {
 
     @Test public void testRemoveNodeWhenNodeIsInTheMiddle() {
         // arrange
-        var linkedList = new DoublyLinkedList<Integer>();
+        final var linkedList = new DoublyLinkedList<Integer>();
 
-        var node1 = linkedList.new Node<>(1);
+        final var node1 = linkedList.new Node<>(1);
         linkedList.addAsLastNode(node1);
 
-        var node2 = linkedList.new Node<>(2);
+        final var node2 = linkedList.new Node<>(2);
         linkedList.addAsLastNode(node2);
 
-        var node3 = linkedList.new Node<>(3);
+        final var node3 = linkedList.new Node<>(3);
         linkedList.addAsLastNode(node3);
 
         // act

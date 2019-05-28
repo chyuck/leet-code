@@ -13,8 +13,8 @@ public class TwoSum {
         HashMap<Integer, Integer> numsToIndexes = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
-            int num1 = nums[i];
-            int num2 = target - num1;
+            final int num1 = nums[i];
+            final int num2 = target - num1;
 
             if (numsToIndexes.containsKey(num2))
                 return new int[] { numsToIndexes.get(num2), i };
