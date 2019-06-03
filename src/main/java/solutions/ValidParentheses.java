@@ -25,7 +25,8 @@ public class ValidParentheses {
             }
 
             // no open parentheses for closed one
-            if (stack.isEmpty()) return false;
+            if (stack.isEmpty())
+                return false;
 
             // closed parentheses should match open
             if (ch == ')' && stack.pop() != '(')
