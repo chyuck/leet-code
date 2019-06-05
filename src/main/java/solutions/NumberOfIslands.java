@@ -4,7 +4,7 @@ public class NumberOfIslands {
 
     /**
      * Solution for https://leetcode.com/problems/number-of-islands problem with
-     * Time complexity: O(M*N), where M,N - grid dimensions
+     * Time complexity: O(M * N), where M,N - grid dimensions
      * Space complexity: O(1)
      */
     public int numIslands(char[][] grid) {
