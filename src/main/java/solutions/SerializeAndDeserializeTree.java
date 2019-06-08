@@ -9,7 +9,7 @@ import java.util.Queue;
  * Space complexity: O(n)
  * where n - number of tree nodes
  */
-public class SerializeAndDeserializeBinaryTree {
+public class SerializeAndDeserializeTree {
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {

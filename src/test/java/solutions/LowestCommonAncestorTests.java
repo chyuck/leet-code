@@ -3,9 +3,9 @@ package solutions;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class LowestCommonAncestorOfBinaryTreeTests {
+public class LowestCommonAncestorTests {
 
-    private static LowestCommonAncestorOfBinaryTree.TreeNode createTree(final LowestCommonAncestorOfBinaryTree solution) {
+    private static LowestCommonAncestor.TreeNode createTree(final LowestCommonAncestor solution) {
         return solution.new TreeNode(3,
             solution.new TreeNode(5,
                 solution.new TreeNode(6),
@@ -19,7 +19,7 @@ public class LowestCommonAncestorOfBinaryTreeTests {
 
     @Test public void testExample1ForSolution1() {
         // arrange
-        final var solution = new LowestCommonAncestorOfBinaryTree();
+        final var solution = new LowestCommonAncestor();
 
         final var root = createTree(solution);
         assert root.val == 3;
@@ -38,7 +38,7 @@ public class LowestCommonAncestorOfBinaryTreeTests {
 
     @Test public void testExample2ForSolution1() {
         // arrange
-        final var solution = new LowestCommonAncestorOfBinaryTree();
+        final var solution = new LowestCommonAncestor();
 
         final var root = createTree(solution);
 
@@ -56,7 +56,7 @@ public class LowestCommonAncestorOfBinaryTreeTests {
 
     @Test public void testExample1ForSolution2() {
         // arrange
-        final var solution = new LowestCommonAncestorOfBinaryTree();
+        final var solution = new LowestCommonAncestor();
 
         final var root = createTree(solution);
         assert root.val == 3;
@@ -75,7 +75,7 @@ public class LowestCommonAncestorOfBinaryTreeTests {
 
     @Test public void testExample2ForSolution2() {
         // arrange
-        final var solution = new LowestCommonAncestorOfBinaryTree();
+        final var solution = new LowestCommonAncestor();
 
         final var root = createTree(solution);
 
