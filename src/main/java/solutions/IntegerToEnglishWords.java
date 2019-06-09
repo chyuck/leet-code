@@ -1,5 +1,10 @@
 package solutions;
 
+/**
+ * Solution for https://leetcode.com/problems/integer-to-english-words problem with
+ * Time complexity: O(n) where n is number of digits
+ * Space complexity: O(1)
+ */
 public class IntegerToEnglishWords {
 
     public String numberToWords(int num) {
