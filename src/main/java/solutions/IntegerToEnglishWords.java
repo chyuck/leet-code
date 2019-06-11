@@ -2,8 +2,9 @@ package solutions;
 
 /**
  * Solution for https://leetcode.com/problems/integer-to-english-words problem with
- * Time complexity: O(n) where n is number of digits
- * Space complexity: O(1)
+ * Time complexity: O(n)
+ * Space complexity: O(n)
+ * where n is number of digits
  */
 public class IntegerToEnglishWords {
 
