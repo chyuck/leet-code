@@ -37,8 +37,8 @@ public class TrappingRainWater {
                 continue;
             }
 
-            // left elevation is greater than of e1ual to right elevation, move right pointer
-            // in this case we know that on the left we have higher bar and water trap depends on right side
+            // left elevation is greater than of equal to right elevation, move right pointer
+            // in this case we know that on the left we have higher bar, and water trap depends on right side
 
             // right elevation is less than max right elevation, add to result
             if (heights[rightIndex] < rightMax)
