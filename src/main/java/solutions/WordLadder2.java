@@ -126,7 +126,6 @@ public class WordLadder2 {
         return nextWords;
     }
 
-
     private static void dfs(final String word, final String endWord,
                             final HashMap<String, List<String>> graph, final HashMap<String, Integer> levels,
                             final List<List<String>> ladders, final List<String> ladder){
