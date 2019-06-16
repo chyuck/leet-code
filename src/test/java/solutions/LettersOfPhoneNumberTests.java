@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class LettersOfPhoneNumberTests {
 
-    @Test public void testExampleForSolution1() {
+    @Test public void testExample() {
         // arrange
         var solution = new LettersOfPhoneNumber();
 
