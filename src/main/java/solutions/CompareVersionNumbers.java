@@ -2,9 +2,8 @@ package solutions;
 
 /**
  * Solutions for https://leetcode.com/problems/compare-version-numbers problem with
- * Time complexity: O(n)
- * Space complexity: O(1)
- * where n - min length of two versions
+ * Time complexity: O(n + m)
+ * where n, m - lengths of two versions
  */
 public class CompareVersionNumbers {
 
@@ -30,6 +29,9 @@ public class CompareVersionNumbers {
         return pointer;
     }
 
+    /**
+     * Space complexity: O(1)
+     */
     public int compareVersion(String version1, String version2) {
 
         int pointer1 = 0, pointer2 = 0;
@@ -92,5 +94,73 @@ public class CompareVersionNumbers {
         }
 
         return tempResult;
+    }
+
+    /**
+     * Space complexity: O(n + m)
+     */
+    public int compareVersion2(String version1, String version2) {
+        // split to parts
+        String[] parts1 = version1.split("\\.");
+        String[] parts2 = version2.split("\\.");
+
+        // loop through parts that exist in both versions
+        for (int i = 0; i < Math.min(parts1.length, parts2.length); i++) {
+            String part1 = parts1[i], part2 = parts2[i];
+            int length1 = part1.length(), length2 = part2.length();
+            int pointer1 = 0, pointer2 = 0;
+
+            // remove leading zeros
+            while (length1 > 0 && part1.charAt(pointer1) == '0') {
+                length1--;
+                pointer1++;
+            }
+            while (length2 > 0 && part2.charAt(pointer2) == '0') {
+                length2--;
+                pointer2++;
+            }
+
+            // after removing leading zeros
+            // if one part is greater than another, then this parts is greater
+            if (length1 > length2) return 1;
+            if (length1 < length2) return -1;
+
+            // lengths are the same
+            int length = length1;
+
+            // compare all chars
+            for (int j = length - 1; j >= 0; j--) {
+                char ch1 = part1.charAt(pointer1), ch2 = part2.charAt(pointer2);
+
+                if (ch1 > ch2) return 1;
+                if (ch1 < ch2) return -1;
+
+                pointer1++;
+                pointer2++;
+            }
+        }
+
+        // if versions have the same number of parts, that means they equal
+        if (parts1.length == parts2.length) return 0;
+
+        // one version has more parts then another
+        // if this version has any non zero character, than it is greater
+        if (parts1.length > parts2.length) {
+            for (int i = parts2.length; i < parts1.length; i++) {
+                for (int j = 0; j < parts1[i].length(); j++) {
+                    if (parts1[i].charAt(j) != '0') return 1;
+                }
+            }
+        }
+        if (parts1.length < parts2.length) {
+            for (int i = parts1.length; i < parts2.length; i++) {
+                for (int j = 0; j < parts2[i].length(); j++) {
+                    if (parts2[i].charAt(j) != '0') return -1;
+                }
+            }
+        }
+
+        // both versions are equal
+        return 0;
     }
 }
