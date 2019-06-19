@@ -29,3 +29,4 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 155 | [Min Stack](https://leetcode.com/problems/min-stack/) | [MinStack.java](src/main/java/solutions/MinStack.java) | [MinStackTests.java](src/test/java/solutions/MinStackTests.java) |
 | 165 | [Compare Version Numbers](https://leetcode.com/problems/compare-version-numbers/) | [CompareVersionNumbers.java](src/main/java/solutions/CompareVersionNumbers.java) | [CompareVersionNumbersTests.java](src/test/java/solutions/CompareVersionNumbersTests.java) |
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [MergeTwoSortedLists.java](src/main/java/solutions/MergeTwoSortedLists.java) | [MergeTwoSortedListsTests.java](src/test/java/solutions/MergeTwoSortedListsTests.java) |
+| 139 | [Word Break](https://leetcode.com/problems/word-break/) | [WordBreak.java](src/main/java/solutions/WordBreak.java) | [WordBreakTests.java](src/test/java/solutions/WordBreakTests.java) |

@@ -54,7 +54,7 @@ public class WordBreak2 {
                 List<String> result = new ArrayList<>();
                 result.add(word);
                 results.add(result);
-                continue;
+                break;
             }
 
             // get next part of string without found word
