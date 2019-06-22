@@ -31,3 +31,4 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 21 | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [MergeTwoSortedLists.java](src/main/java/solutions/MergeTwoSortedLists.java) | [MergeTwoSortedListsTests.java](src/test/java/solutions/MergeTwoSortedListsTests.java) |
 | 139 | [Word Break](https://leetcode.com/problems/word-break/) | [WordBreak.java](src/main/java/solutions/WordBreak.java) | [WordBreakTests.java](src/test/java/solutions/WordBreakTests.java) |
 | 79 | [Word Search](https://leetcode.com/problems/word-search/) | [WordSearch.java](src/main/java/solutions/WordSearch.java) | [WordSearchTests.java](src/test/java/solutions/WordSearchTests.java) |
+| 212 | [Word Search II](https://leetcode.com/problems/word-search-ii/) | [WordSearch2.java](src/main/java/solutions/WordSearch2.java) | [WordSearch2Tests.java](src/test/java/solutions/WordSearch2Tests.java) |
