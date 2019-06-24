@@ -12,7 +12,7 @@ public class WordSearch2Tests {
             {'i','f','l','v'}
     };
 
-    @Test public void testExample1ForSolution1() {
+    @Test public void testExampleForSolution1() {
         // arrange
         var solution = new WordSearch2();
 
@@ -25,7 +25,7 @@ public class WordSearch2Tests {
         assertTrue(results.contains("oath"));
     }
 
-    @Test public void testCase1ForSolution1() {
+    @Test public void testCaseForSolution1() {
         // arrange
         var solution = new WordSearch2();
 
@@ -39,7 +39,7 @@ public class WordSearch2Tests {
         assertTrue(results.contains("oathi"));
     }
 
-    @Test public void testExample1ForSolution2() {
+    @Test public void testExampleForSolution2() {
         // arrange
         var solution = new WordSearch2();
 
@@ -52,7 +52,7 @@ public class WordSearch2Tests {
         assertTrue(results.contains("oath"));
     }
 
-    @Test public void testCase1ForSolution2() {
+    @Test public void testCaseForSolution2() {
         // arrange
         var solution = new WordSearch2();
 
