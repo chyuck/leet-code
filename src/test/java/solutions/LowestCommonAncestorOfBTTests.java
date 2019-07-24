@@ -3,9 +3,9 @@ package solutions;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class LowestCommonAncestorTests {
+public class LowestCommonAncestorOfBTTests {
 
-    private static LowestCommonAncestor.TreeNode createTree(final LowestCommonAncestor solution) {
+    private static LowestCommonAncestorOfBT.TreeNode createTree(final LowestCommonAncestorOfBT solution) {
         return solution.new TreeNode(3,
             solution.new TreeNode(5,
                 solution.new TreeNode(6),
@@ -19,7 +19,7 @@ public class LowestCommonAncestorTests {
 
     @Test public void testExample1ForSolution1() {
         // arrange
-        final var solution = new LowestCommonAncestor();
+        final var solution = new LowestCommonAncestorOfBT();
 
         final var root = createTree(solution);
         assert root.val == 3;
@@ -38,7 +38,7 @@ public class LowestCommonAncestorTests {
 
     @Test public void testExample2ForSolution1() {
         // arrange
-        final var solution = new LowestCommonAncestor();
+        final var solution = new LowestCommonAncestorOfBT();
 
         final var root = createTree(solution);
 
@@ -56,7 +56,7 @@ public class LowestCommonAncestorTests {
 
     @Test public void testExample1ForSolution2() {
         // arrange
-        final var solution = new LowestCommonAncestor();
+        final var solution = new LowestCommonAncestorOfBT();
 
         final var root = createTree(solution);
         assert root.val == 3;
@@ -75,7 +75,7 @@ public class LowestCommonAncestorTests {
 
     @Test public void testExample2ForSolution2() {
         // arrange
-        final var solution = new LowestCommonAncestor();
+        final var solution = new LowestCommonAncestorOfBT();
 
         final var root = createTree(solution);
 

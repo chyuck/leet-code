@@ -9,7 +9,7 @@ import java.util.Stack;
  * Time complexity: O(n)
  * Space complexity: O(n)
  */
-public class LowestCommonAncestor {
+public class LowestCommonAncestorOfBT {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         // end of tree
