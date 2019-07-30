@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class PascalTriangle2Tests {
 
-    @Test public void testExample1() {
+    @Test public void testExample() {
         // arrange
         var solution = new PascalTriangle2();
 
