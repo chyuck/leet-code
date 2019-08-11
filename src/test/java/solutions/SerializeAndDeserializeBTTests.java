@@ -3,11 +3,11 @@ package solutions;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class SerializeAndDeserializeTreeTests {
+public class SerializeAndDeserializeBTTests {
 
     @Test public void testExample() {
         // arrange
-        final var solution = new SerializeAndDeserializeTree();
+        final var solution = new SerializeAndDeserializeBT();
 
         final var input = solution.new TreeNode(1,
             solution.new TreeNode(2, null, null),
