@@ -2,13 +2,13 @@ package solutions;
 
 import java.util.HashMap;
 
+/**
+ * Solution for https://leetcode.com/problems/two-sum problem with
+ * Time complexity: O(n)
+ * Space complexity: O(n)
+ */
 public class TwoSum {
 
-    /**
-     * Solution for https://leetcode.com/problems/two-sum problem with
-     * Time complexity: O(n)
-     * Space complexity: O(n)
-     */
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> numsToIndexes = new HashMap<>();
 
