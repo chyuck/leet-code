@@ -77,3 +77,4 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 840 | Easy | [Magic Squares In Grid](https://leetcode.com/problems/magic-squares-in-grid/) | [MagicSquaresInGrid.java](src/main/java/solutions/MagicSquaresInGrid.java) ([Tests](src/test/java/solutions/MagicSquaresInGridTests.java)) |
 | 937 | Easy | [Reorder Log Files](https://leetcode.com/problems/reorder-log-files/) | [ReorderLogFiles.java](src/main/java/solutions/ReorderLogFiles.java) ([Tests](src/test/java/solutions/ReorderLogFilesTests.java)) |
 | 973 | Medium | [K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | [KClosestPointsToOrigin.java](src/main/java/solutions/KClosestPointsToOrigin.java) ([Tests](src/test/java/solutions/KClosestPointsToOriginTests.java)) |
+| 1193 | Medium | [Monthly Transactions I](https://leetcode.com/problems/monthly-transactions-i/) | [MonthlyTransactions.sql](src/main/sql/MonthlyTransactions.sql) |
