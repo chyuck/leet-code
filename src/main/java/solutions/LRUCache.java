@@ -1,93 +1,140 @@
 package solutions;
 
-import structures.DoublyLinkedList;
-
 import java.util.HashMap;
 
 /**
  * Solution for https://leetcode.com/problems/lru-cache problem
+ * Space complexity: O(n)
  */
 public class LRUCache {
 
-    class Data {
-        private int key;
-        private int value;
-
-        public Data(int key, int value) {
-            this.key = key;
-            this.value = value;
-        }
-
-        public int getKey() {
-            return key;
-        }
-
-        public int getValue() {
-            return value;
-        }
-
-        public void setValue(int value) {
-            this.value = value;
-        }
+    private class Node {
+        public int key;
+        public int value;
+        public Node prev;
+        public Node next;
     }
 
     private final int capacity;
-    private final HashMap<Integer, DoublyLinkedList<Data>.Node<Data>> keysToNodes = new HashMap<>();
-    private final DoublyLinkedList<Data> nodes = new DoublyLinkedList<>();
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
     }
 
+    private Node head, tail;
+    private final HashMap<Integer, Node> keysToNodes = new HashMap<>();
+
+    private void removeNode(Node node) {
+        // only one node
+        if (node.prev == null && node.next == null) {
+            head = tail = null;
+            return;
+        }
+
+        // first node
+        if (node.prev == null) {
+            Node next = node.next;
+            next.prev = null;
+            head = next;
+
+            node.next = null;
+
+            return;
+        }
+
+        // last node
+        if (node.next == null) {
+            Node prev = node.prev;
+            prev.next = null;
+            tail = prev;
+
+            node.prev = null;
+
+            return;
+        }
+
+        // in the middle
+        {
+            Node prev = node.prev;
+            Node next = node.next;
+
+            prev.next = next;
+            next.prev = prev;
+
+            node.prev = node.next = null;
+        }
+    }
+
+    private void addNodeToTail(Node node) {
+        // empty linked list
+        if (tail == null) {
+            head = tail = node;
+
+            return;
+        }
+
+        // linked list has nodes
+        Node prev = tail;
+        prev.next = node;
+
+        node.prev = prev;
+        tail = node;
+    }
+
+    private void moveNodeToTail(Node node) {
+        // already at tail
+        if (node.next == null) return;
+
+        removeNode(node);
+        addNodeToTail(node);
+    }
+
     /**
      * Returns value by key with
      * Time complexity: O(1)
-     * Space complexity: O(n)
      */
     public int get(int key) {
+        Node node = keysToNodes.get(key);
+
         // key does not exist
-        if (!keysToNodes.containsKey(key))
-            return -1;
+        if (node == null) return -1;
 
         // key exist
-        final DoublyLinkedList<Data>.Node<Data> node = keysToNodes.get(key);
-        // move node to the end of linked list
-        nodes.removeNode(node);
-        nodes.addAsLastNode(node);
+        moveNodeToTail(node);
 
-        return node.getData().getValue();
+        return node.value;
     }
 
     /**
      * Inserts or updates value with key with
      * Time complexity: O(1)
-     * Space complexity: O(n)
      */
     public void put(int key, int value) {
+        Node node = keysToNodes.get(key);
+
         // key exists
-        if (keysToNodes.containsKey(key)) {
-            final DoublyLinkedList<Data>.Node<Data> node = keysToNodes.get(key);
-            // move node to the end of linked list
-            nodes.removeNode(node);
-            nodes.addAsLastNode(node);
-            // update value
-            node.getData().setValue(value);
+        if (node != null) {
+            moveNodeToTail(node);
+            node.value = value;
+
             return;
         }
 
         // key does not exist
-        // capacity is full
+
+        // capacity is full, remove first node
         if (keysToNodes.size() == capacity) {
-            // remove first node
-            final DoublyLinkedList<Data>.Node<Data> firstNode = nodes.getFirstNode();
-            nodes.removeNode(firstNode);
-            keysToNodes.remove(firstNode.getData().getKey());
+            Node first = head;
+            removeNode(first);
+            keysToNodes.remove(first.key);
         }
 
-        // add new node to the end
-        final Data data = new Data(key, value);
-        final DoublyLinkedList<Data>.Node<Data> newNode = nodes.new Node<Data>(data);
-        nodes.addAsLastNode(newNode);
-        keysToNodes.put(key, newNode);
+        // add new
+        Node newNode = new Node();
+        newNode.key = key;
+        newNode.value = value;
+
+        addNodeToTail(newNode);
+        keysToNodes.put(newNode.key, newNode);
     }
 }

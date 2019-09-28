@@ -24,7 +24,7 @@ public class TopKFrequentWords {
             if (countA == countB)
                 return b.compareTo(a);
 
-            return countA - countB;
+            return countA.compareTo(countB);
         });
         for (String key: counts.keySet()) {
             minHeap.add(key);
