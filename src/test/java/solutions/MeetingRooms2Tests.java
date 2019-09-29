@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class MeetingRooms2Tests {
 
-    @Test public void testExample1() {
+    @Test public void testExample1ForSolution1() {
         // arrange
         var solution = new MeetingRooms2();
 
@@ -22,7 +22,7 @@ public class MeetingRooms2Tests {
         assertEquals(2, result);
     }
 
-    @Test public void testExample2() {
+    @Test public void testExample2ForSolution1() {
         // arrange
         var solution = new MeetingRooms2();
 
@@ -33,6 +33,28 @@ public class MeetingRooms2Tests {
 
         // act
         var result = solution.minMeetingRooms(intervals);
+
+        // assert
+        assertEquals(1, result);
+    }
+
+    @Test public void testExample1ForSolution2() {
+        // arrange
+        var solution = new MeetingRooms2();
+
+        // act
+        var result = solution.minMeetingRooms(new int[][] {{0, 30},{5, 10},{15, 20}});
+
+        // assert
+        assertEquals(2, result);
+    }
+
+    @Test public void testExample2ForSolution2() {
+        // arrange
+        var solution = new MeetingRooms2();
+
+        // act
+        var result = solution.minMeetingRooms(new int[][] {{7, 10},{2, 4}});
 
         // assert
         assertEquals(1, result);
