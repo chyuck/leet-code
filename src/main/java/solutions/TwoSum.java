@@ -1,6 +1,7 @@
 package solutions;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Solution for https://leetcode.com/problems/two-sum problem with
@@ -10,18 +11,19 @@ import java.util.HashMap;
 public class TwoSum {
 
     public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> numsToIndexes = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>(nums.length);
 
         for (int i = 0; i < nums.length; i++) {
-            final int num1 = nums[i];
-            final int num2 = target - num1;
+            int second = nums[i];
+            int first = target - second;
 
-            if (numsToIndexes.containsKey(num2))
-                return new int[] { numsToIndexes.get(num2), i };
+            if (map.containsKey(first)) {
+                return new int[] { map.get(first), i };
+            }
 
-            numsToIndexes.put(num1, i);
+            map.put(second, i);
         }
 
-        throw new IllegalArgumentException("No solution.");
+        throw new IllegalStateException("No solution");
     }
 }

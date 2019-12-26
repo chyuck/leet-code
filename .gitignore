@@ -5,3 +5,4 @@ build
 # IDEA
 .idea/uiDesigner.xml
 .idea/workspace.xml
+.idea/checkstyle-idea.xml
