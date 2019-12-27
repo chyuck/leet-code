@@ -22,23 +22,6 @@ public class ReverseLinkedListTests {
         assertEquals("5->4->3->2->1", printLinkedList(result));
     }
 
-    @Test public void testExampleForRecursiveSolution() {
-        // arrange
-        var solution = new ReverseLinkedList();
-
-        var list = solution.new ListNode(1,
-                solution.new ListNode(2,
-                        solution.new ListNode(3,
-                                solution.new ListNode(4,
-                                        solution.new ListNode(5)))));
-
-        // act
-        var result = solution.reverseList2(list);
-
-        // assert
-        assertEquals("5->4->3->2->1", printLinkedList(result));
-    }
-
     private String printLinkedList(ReverseLinkedList.ListNode node) {
         if (node == null)
             return "";
