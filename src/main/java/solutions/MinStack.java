@@ -9,32 +9,27 @@ import java.util.Stack;
  */
 public class MinStack {
 
-    private class Node {
-        public int value;
-        // top node will keep min value of stack
-        public int minValue;
+    private class Data {
+        public int x;
+        public int min;
+    };
 
-        public Node(int value, int minValue) {
-            this.value = value;
-            this.minValue = minValue;
-        }
-    }
-
-    private final Stack<Node> stack = new Stack<>();
-
-    public void push(int x) {
-        int minValue = getMinValue(x);
-
-        Node node = new Node(x, minValue);
-        stack.push(node);
-    }
+    private final Stack<Data> stack = new Stack<>();
 
     private int getMinValue(int x) {
-        if (stack.isEmpty())
+        if (stack.empty()) {
             return x;
+        }
 
-        Node topNode = stack.peek();
-        return Math.min(topNode.minValue, x);
+        return Math.min(getMin(), x);
+    }
+
+    public void push(int x) {
+        Data data = new Data();
+        data.x = x;
+        data.min = getMinValue(x);
+
+        stack.push(data);
     }
 
     public void pop() {
@@ -42,12 +37,12 @@ public class MinStack {
     }
 
     public int top() {
-        Node topNode = stack.peek();
-        return topNode.value;
+        Data data = stack.peek();
+        return data.x;
     }
 
     public int getMin() {
-        Node topNode = stack.peek();
-        return topNode.minValue;
+        Data data = stack.peek();
+        return data.min;
     }
 }
