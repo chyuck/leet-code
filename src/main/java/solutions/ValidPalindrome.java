@@ -3,34 +3,38 @@ package solutions;
 public class ValidPalindrome {
 
     public boolean isPalindrome(String s) {
-        if (s == null || s.length() <= 1) return true;
+        if (s == null || s.length() == 0) {
+            return true;
+        }
 
-        int left = 0, right = s.length() - 1;
+        int p1 = 0;
+        int p2 = s.length() - 1;
 
-        while (left < right) {
-            char leftChar = s.charAt(left);
-            if (!isAlphaNumeric(leftChar)) {
-                left++;
+        while (p1 < p2) {
+            char c1 = Character.toLowerCase(s.charAt(p1));
+            if (!isAlphaNumeric(c1)) {
+                p1++;
                 continue;
             }
 
-            char rightChar = s.charAt(right);
-            if (!isAlphaNumeric(rightChar)) {
-                right--;
+            char c2 = Character.toLowerCase(s.charAt(p2));
+            if (!isAlphaNumeric(c2)) {
+                p2--;
                 continue;
             }
 
-            if (Character.toLowerCase(leftChar) != Character.toLowerCase(rightChar))
+            if (c1 != c2) {
                 return false;
+            }
 
-            left++;
-            right--;
+            p1++;
+            p2--;
         }
 
         return true;
     }
 
     private boolean isAlphaNumeric(char c) {
-        return Character.isLetter(c) || Character.isDigit(c);
+        return Character.isLetter(c) || Character.isLetter(c);
     }
 }
