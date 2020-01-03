@@ -22,6 +22,7 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 49 | Medium | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | [GroupAnagrams.java](src/main/java/solutions/GroupAnagrams.java) ([Tests](src/test/java/solutions/GroupAnagramsTests.java)) |
 | 53 | Easy | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [MaximumSubarray.java](src/main/java/solutions/MaximumSubarray.java) ([Tests](src/test/java/solutions/MaximumSubarrayTests.java)) |
 | 56 | Medium | [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | [MergeIntervals.java](src/main/java/solutions/MergeIntervals.java) ([Tests](src/test/java/solutions/MergeIntervalsTests.java)) |
+| 70 | Easy | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | [ClimbingStairs.java](src/main/java/solutions/ClimbingStairs.java) ([Tests](src/test/java/solutions/ClimbingStairsTests.java)) |
 | 73 | Medium | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | [SetMatrixZeroes.java](src/main/java/solutions/SetMatrixZeroes.java) ([Tests](src/test/java/solutions/SetMatrixZeroesTests.java)) |
 | 78 | Medium | [Subsets](https://leetcode.com/problems/subsets/) | [Subsets.java](src/main/java/solutions/Subsets.java) ([Tests](src/test/java/solutions/SubsetsTests.java)) |
 | 79 | Medium | [Word Search](https://leetcode.com/problems/word-search/) | [WordSearch.java](src/main/java/solutions/WordSearch.java) ([Tests](src/test/java/solutions/WordSearchTests.java)) |
