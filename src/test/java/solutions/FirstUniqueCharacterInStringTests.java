@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 
 public class FirstUniqueCharacterInStringTests {
 
-    @Test public void testExample1() {
+    @Test
+    public void testExample1() {
         // arrange
         var solution = new FirstUniqueCharacterInString();
 
@@ -16,7 +17,8 @@ public class FirstUniqueCharacterInStringTests {
         assertEquals(0, result);
     }
 
-    @Test public void testExample2() {
+    @Test
+    public void testExample2() {
         // arrange
         var solution = new FirstUniqueCharacterInString();
 
