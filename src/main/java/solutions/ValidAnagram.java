@@ -1,5 +1,8 @@
 package solutions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Solution for https://leetcode.com/problems/valid-anagram problem with
  * Time complexity: O(S + T)
@@ -8,36 +11,34 @@ package solutions;
 public class ValidAnagram {
 
     public boolean isAnagram(String s, String t) {
-        if (s == null || t == null) return false;
-        if (s.length() != t.length()) return false;
+        if (s == null || t == null) {
+            return false;
+        }
+        if (s.length() != t.length()) {
+            return false;
+        }
 
-        // create array with each letter counter for s
-        int[] chars = new int['z' - 'a' + 1];
+        Map<Character, Integer> counts = new HashMap<>();
+
         for (int i = 0; i < s.length(); i++) {
-            char letter = s.charAt(i);
-            // convert letter to index of 0 to 25
-            int index = letter - 'a';
-            // increment counter for each character
-            chars[index]++;
+            char c = s.charAt(i);
+            Integer count = counts.getOrDefault(c, 0);
+            counts.put(c, count + 1);
         }
 
-        // loop through t and validate that every letter matches letter in s
-        for (int i = 0; i < t.length(); i++) {
-            char letter = t.charAt(i);
-            // convert letter to index of 0 to 25
-            int index = letter - 'a';
+        for (int i = 0; i < s.length(); i++) {
+            char c = t.charAt(i);
+            Integer count = counts.getOrDefault(c, 0);
 
-            // if counter is zero, that means that t has letter that s does not have
-            if (chars[index] == 0)
+            if (count == 0) {
                 return false;
-
-            // decrement letter counter
-            chars[index]--;
+            } else if (count == 1) {
+                counts.remove(c);
+            } else {
+                counts.put(c, count - 1);
+            }
         }
 
-        // with assumption that s length and t length are equal
-        // all counters should be zeroes
-        // and that means s is anagram of t
-        return true;
+        return counts.size() == 0;
     }
 }
