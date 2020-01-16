@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 
 public class CountPrimesTests {
 
-    @Test public void testExample1() {
+    @Test
+    public void testExample1() {
         // arrange
         var solution = new CountPrimes();
 
