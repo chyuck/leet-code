@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 
 public class LinkedListCycleTests {
 
-    @Test public void testExample1() {
+    @Test
+    public void testExample1() {
         // arrange
         var solution = new LinkedListCycle();
 
@@ -22,7 +23,8 @@ public class LinkedListCycleTests {
         assertTrue(result);
     }
 
-    @Test public void testExample2() {
+    @Test
+    public void testExample2() {
         // arrange
         var solution = new LinkedListCycle();
 
@@ -37,7 +39,8 @@ public class LinkedListCycleTests {
         assertTrue(result);
     }
 
-    @Test public void testExample3() {
+    @Test
+    public void testExample3() {
         // arrange
         var solution = new LinkedListCycle();
 

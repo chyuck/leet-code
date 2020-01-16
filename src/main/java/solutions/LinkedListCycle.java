@@ -8,30 +8,23 @@ package solutions;
 public class LinkedListCycle {
 
     public boolean hasCycle(ListNode head) {
-        if (head == null) return false;
+        if (head == null) {
+            return false;
+        }
 
-        // create slow pointer which will go one step at a time
-        // head will be fast pointer will go two steps at a time
-        ListNode pointer = head;
+        ListNode slow = head;
+        ListNode fast = head.next;
 
-        while (true) {
-
-            // do two steps for fast pointer
-            for (int i = 0; i < 2; i++) {
-                head = head.next;
-
-                // if reached the end, then return no cycle
-                if (head == null)
-                    return false;
-
-                // if fast met slow pointer, then return that cycle exist
-                if (pointer == head)
-                    return true;
+        while (fast != null && fast.next != null) {
+            if (slow.val == fast.val) {
+                return true;
             }
 
-            // do one step for slow pointer
-            pointer = pointer.next;
+            slow = slow.next;
+            fast = fast.next.next;
         }
+
+        return false;
     }
 
     public class ListNode {
