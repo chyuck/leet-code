@@ -8,45 +8,35 @@ package solutions;
 public class IntersectionOfTwoLinkedLists {
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null) return null;
+        if (headA == null || headB == null) {
+            return null;
+        }
 
-        // record last node
-        ListNode lastNode = null;
-        // start traversing from heads
-        ListNode p1 = headA, p2 = headB;
+        ListNode p1 = headA;
+        ListNode p2 = headB;
 
-        // the idea is to traverse A and B from heads and when any pointer reaches the end, switch it to another head
-        // after switching both pointers to other heads, pointers must meet at intersection,
-        // because pointer #1 will traverse A + B number of nodes, and pointer #2 will traverse B + A number of nodes
-        // as long as last nodes are the same, then A and B meet at first shared node, which is result
-        while (true) {
-            // if pointer #1 meets pointer #2
-            if (p1 == p2)
+        boolean switched1 = false;
+        boolean switched2 = false;
+
+        while (p1 != null && p2 != null) {
+            if (p1 == p2) {
                 return p1;
-
-            // reached the end
-            if (p1.next == null) {
-                // if end is different, then means there is no intersection
-                if (lastNode != null && lastNode != p1)
-                    return null;
-                // record last node
-                lastNode = p1;
-                // switch to another head
-                p1 = headB;
-            } else {
-                p1 = p1.next;
             }
 
-            // the same for another pointer
-            if (p2.next == null) {
-                if (lastNode != null && lastNode != p2)
-                    return null;
-                lastNode = p2;
+            p1 = p1.next;
+            if (p1 == null && !switched1) {
+                p1 = headB;
+                switched1 = true;
+            }
+
+            p2 = p2.next;
+            if (p2 == null && !switched2) {
                 p2 = headA;
-            } else {
-                p2 = p2.next;
+                switched2 = true;
             }
         }
+
+        return null;
     }
 
     public class ListNode {

@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 
 public class IntersectionOfTwoLinkedListsTests {
 
-    @Test public void testExample1() {
+    @Test
+    public void testExample1() {
         // arrange
         var solution = new IntersectionOfTwoLinkedLists();
 
@@ -27,7 +28,8 @@ public class IntersectionOfTwoLinkedListsTests {
         assertEquals(linkedList1.next.next, result);
     }
 
-    @Test public void testExample2() {
+    @Test
+    public void testExample2() {
         // arrange
         var solution = new IntersectionOfTwoLinkedLists();
 
@@ -47,7 +49,8 @@ public class IntersectionOfTwoLinkedListsTests {
         assertEquals(linkedList1.next.next.next, result);
     }
 
-    @Test public void testExample3() {
+    @Test
+    public void testExample3() {
         // arrange
         var solution = new IntersectionOfTwoLinkedLists();
 
