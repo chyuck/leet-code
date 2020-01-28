@@ -8,43 +8,33 @@ package solutions;
 public class RotateArray {
 
     public void rotate(int[] nums, int k) {
-        // if array is empty or has one element, then don't do anything
-        if (nums == null || nums.length <= 1) return;
-        // if all elements go to the same position, then don't do anything
-        if (k % nums.length == 0) return;
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        if (k <= 0) {
+            return;
+        }
+        if (k % nums.length == 0) {
+            return;
+        }
 
-        // current index to rotate
+        int start = 0;
+
         int pointer = 0;
-        // current value to rotate
-        int value = nums[pointer];
+        int num = nums[pointer];
 
-        // start of rotation to track cyclic rotations
-        int start = pointer;
-
-        // do exactly length of num iterations
-        for (int i = 0; i < nums.length; i++) {
-
-            // calculate index after rotation
+        for (int i = 1; i <= nums.length; i++) {
             int nextPointer = (pointer + k) % nums.length;
-            // save value to be replaced by current value
-            int nextValue = nums[nextPointer];
+            int nextNum = nums[nextPointer];
 
-            // set current value to next index
-            nums[nextPointer] = value;
-
-            // update value by saved value
-            value = nextValue;
-            // update pointer by new index
+            nums[nextPointer] = num;
             pointer = nextPointer;
+            num = nextNum;
 
-            // if pointer came to start index
             if (pointer == start) {
-                // increment start index
                 start++;
-                // set current index with new start index
                 pointer = start;
-                // update value from new current index
-                value = nums[pointer];
+                num = nums[pointer];
             }
         }
     }
