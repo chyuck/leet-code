@@ -62,6 +62,7 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 171 | Easy | [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/) | [ExcelSheetColumnNumber.java](src/main/java/solutions/ExcelSheetColumnNumber.java) ([Tests](src/test/java/solutions/ExcelSheetColumnNumberTests.java)) |
 | 184 | Medium | [Department Highest Salary](https://leetcode.com/problems/department-highest-salary/) | [DepartmentHighestSalary.sql](src/main/sql/DepartmentHighestSalary.sql) |
 | 189 | Easy | [Rotate Array](https://leetcode.com/problems/rotate-array/) | [RotateArray.java](src/main/java/solutions/RotateArray.java) ([Tests](src/test/java/solutions/RotateArrayTests.java)) |
+| 190 | Easy | [Reverse Bits](https://leetcode.com/problems/reverse-bits/) | [ReverseBits.java](src/main/java/solutions/ReverseBits.java) ([Tests](src/test/java/solutions/ReverseBitsTests.java)) |
 | 198 | Easy | [House Robber](https://leetcode.com/problems/house-robber/) | [HouseRobber.java](src/main/java/solutions/HouseRobber.java) ([Tests](src/test/java/solutions/HouseRobberTests.java)) |
 | 199 | Medium | [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) | [BinaryTreeRightSideView.java](src/main/java/solutions/BinaryTreeRightSideView.java) ([Tests](src/test/java/solutions/BinaryTreeRightSideViewTests.java)) |
 | 200 | Medium | [Number of Islands](https://leetcode.com/problems/number-of-islands/) | [NumberOfIslands.java](src/main/java/solutions/NumberOfIslands.java) ([Tests](src/test/java/solutions/NumberOfIslandsTests.java)) |
