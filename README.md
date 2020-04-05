@@ -30,6 +30,7 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 69 | Easy | [Sqrt(x)](https://leetcode.com/problems/sqrtx/) | [Sqrtx.java](src/main/java/solutions/Sqrtx.java) ([Tests](src/test/java/solutions/SqrtxTests.java)) |
 | 70 | Easy | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | [ClimbingStairs.java](src/main/java/solutions/ClimbingStairs.java) ([Tests](src/test/java/solutions/ClimbingStairsTests.java)) |
 | 73 | Medium | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | [SetMatrixZeroes.java](src/main/java/solutions/SetMatrixZeroes.java) ([Tests](src/test/java/solutions/SetMatrixZeroesTests.java)) |
+| 76 | Hard | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | [MinimumWindowSubstring.java](src/main/java/solutions/MinimumWindowSubstring.java) ([Tests](src/test/java/solutions/MinimumWindowSubstringTests.java)) |
 | 78 | Medium | [Subsets](https://leetcode.com/problems/subsets/) | [Subsets.java](src/main/java/solutions/Subsets.java) ([Tests](src/test/java/solutions/SubsetsTests.java)) |
 | 79 | Medium | [Word Search](https://leetcode.com/problems/word-search/) | [WordSearch.java](src/main/java/solutions/WordSearch.java) ([Tests](src/test/java/solutions/WordSearchTests.java)) |
 | 88 | Easy | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | [MergeSortedArray.java](src/main/java/solutions/MergeSortedArray.java) ([Tests](src/test/java/solutions/MergeSortedArrayTests.java)) |
