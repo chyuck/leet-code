@@ -7,3 +7,6 @@ build
 .idea/workspace.xml
 .idea/checkstyle-idea.xml
 .idea/encodings.xml
+.idea/jarRepositories.xml
+.idea/leet-code.iml
+.idea/misc.xml
