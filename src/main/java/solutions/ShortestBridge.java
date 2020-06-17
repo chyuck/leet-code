@@ -2,6 +2,12 @@ package solutions;
 
 import java.util.*;
 
+/**
+ * Solution for https://leetcode.com/problems/shortest-bridge/ problem with
+ * Time complexity: O(A)
+ * Space complexity: O(A)
+ * where A - total number of elements in input array
+ */
 public class ShortestBridge {
 
     private static final int ORIGINAL_ISLAND_ID = 1;
