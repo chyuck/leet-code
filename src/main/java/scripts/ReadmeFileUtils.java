@@ -29,7 +29,12 @@ final class ReadmeFileUtils {
 
         var sb = new StringBuilder();
 
-        for (char c : name.toCharArray()) {
+        var chars = name.toCharArray();
+        sb.append(chars[0]);
+
+        for (int i = 1; i < chars.length; i++) {
+            var c = chars[i];
+
             if (Character.isUpperCase(c)) {
                 sb.append(" ");
             }
