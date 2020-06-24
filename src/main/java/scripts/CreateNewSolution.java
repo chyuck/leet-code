@@ -89,8 +89,34 @@ public class CreateNewSolution {
         sb.append(line).append(System.lineSeparator());
     }
 
-    private static void createTestsFile(String name) {
+    private static void createTestsFile(String name) throws IOException {
+        Preconditions.checkArgument(StringUtils.isNotBlank(name));
 
+        var sb = new StringBuilder();
+
+        appendLine(sb, "package solutions;");
+        appendLine(sb, StringUtils.EMPTY);
+        appendLine(sb, "import org.junit.Assert;");
+        appendLine(sb, "import org.junit.Test;");
+        appendLine(sb, StringUtils.EMPTY);
+        appendLine(sb, "public class " + name + "Tests {");
+        appendLine(sb, StringUtils.EMPTY);
+        appendLine(sb, "    @Test");
+        appendLine(sb, "    public void testExample1(){");
+        appendLine(sb, "        // arrange");
+        appendLine(sb, "        var solution = new " + name + "();");
+        appendLine(sb, StringUtils.EMPTY);
+        appendLine(sb, "        // act");
+        appendLine(sb, "        //var result = solution.");
+        appendLine(sb, StringUtils.EMPTY);
+        appendLine(sb, "        // assert");
+        appendLine(sb, "        //Assert.assertEquals(, result);");
+        appendLine(sb, "    }");
+        appendLine(sb, "}");
+
+        var bytes = sb.toString().getBytes();
+        var path = Paths.get("src", "test", "java", "solutions", name + "Tests.java");
+        Files.write(path, bytes);
     }
 
     private static void updateReadmeFile(String number, String url, String name) {
