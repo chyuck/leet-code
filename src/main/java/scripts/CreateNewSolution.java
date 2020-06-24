@@ -1,6 +1,11 @@
 package scripts;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.apache.commons.lang3.StringUtils;
+
+import com.google.common.base.Preconditions;
 
 public class CreateNewSolution {
 
@@ -15,6 +20,9 @@ public class CreateNewSolution {
     }
 
     private static void createSolution(String number, String url) {
+        Preconditions.checkArgument(StringUtils.isNotBlank(number));
+        Preconditions.checkArgument(StringUtils.isNotBlank(url));
+
         String name = createName(url);
 
         createSolutionFile(name, url);
@@ -23,10 +31,17 @@ public class CreateNewSolution {
     }
 
     private static final Pattern URL_PATTERN =
-            Pattern.compile("^https:\\/\\/leetcode\\.com\\/problems\\/([a-z0-1\\-]+)\\/$");
+            Pattern.compile("^https:\\/\\/leetcode\\.com\\/problems\\/([a-z0-9-]+)\\/$");
 
-    private static String createName(String url) {
-        String urlNamePart = URL_PATTERN.matcher(url).group(1);
+    static String createName(String url) {
+        Preconditions.checkArgument(StringUtils.isNotBlank(url));
+
+        Matcher matcher = URL_PATTERN.matcher(url);
+        if (!matcher.find()) {
+            throw new IllegalArgumentException("Invalid LeetCode URL.")    ;
+        }
+
+        String urlNamePart = matcher.group(1);
         String[] nameParts = urlNamePart.split("-");
 
         StringBuilder sb = new StringBuilder();
