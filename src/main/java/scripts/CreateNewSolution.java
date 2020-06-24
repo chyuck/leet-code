@@ -17,7 +17,7 @@ public class CreateNewSolution {
                 throw new IllegalArgumentException("Arguments: number, url");
             }
 
-            createSolution(args[0], args[1]);
+            createSolution(Integer.parseInt(args[0]), args[1]);
 
             System.out.println("Solution files created");
         } catch (Exception e) {
@@ -25,8 +25,8 @@ public class CreateNewSolution {
         }
     }
 
-    private static void createSolution(String number, String url) throws IOException {
-        Preconditions.checkArgument(StringUtils.isNotBlank(number));
+    private static void createSolution(int number, String url) throws IOException {
+        Preconditions.checkArgument(number > 0);
         Preconditions.checkArgument(StringUtils.isNotBlank(url));
 
         String name = createName(url);
@@ -119,7 +119,13 @@ public class CreateNewSolution {
         Files.write(path, bytes);
     }
 
-    private static void updateReadmeFile(String number, String url, String name) {
+    private static void updateReadmeFile(int number, String url, String name) throws IOException {
+        Preconditions.checkArgument(number > 0);
+        Preconditions.checkArgument(StringUtils.isNotBlank(name));
+        Preconditions.checkArgument(StringUtils.isNotBlank(url));
 
+        var line = ReadmeFileUtils.createLine(number, url, name);
+
+        ReadmeFileUtils.addLineAndOrderReadmeFile(number, line);
     }
 }
