@@ -91,7 +91,6 @@ final class ReadmeFileUtils {
             }
         }
 
-
         if (newLineNumber > 0 && StringUtils.isNotBlank(newLine)) {
             sortedMap.put(newLineNumber, newLine);
         }
