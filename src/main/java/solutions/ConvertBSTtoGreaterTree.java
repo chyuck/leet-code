@@ -1,5 +1,7 @@
 package solutions;
 
+import structures.TreeNode;
+
 /**
  * Solution for https://leetcode.com/problems/convert-bst-to-greater-tree problem with
  * Time complexity: O(n)
@@ -30,21 +32,5 @@ public class ConvertBSTtoGreaterTree {
         // convert left sub tree using new sum and return new sum
         // left subtree results are ignored by parents but are used by grand parents
         return convert(node.left, newSum);
-    }
-
-    public class TreeNode {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        public TreeNode(int val) {
-            this.val = val;
-        }
-
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this(val);
-            this.left = left;
-            this.right = right;
-        }
     }
 }

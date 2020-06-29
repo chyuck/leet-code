@@ -1,6 +1,9 @@
 package solutions;
 
 import org.junit.Test;
+
+import structures.TreeNode;
+
 import static org.junit.Assert.*;
 
 public class BinaryTreeZigzagTraversalTests {
@@ -9,11 +12,11 @@ public class BinaryTreeZigzagTraversalTests {
         // arrange
         final var solution = new BinaryTreeZigzagTraversal();
 
-        final var tree = solution.new TreeNode(3,
-            solution.new TreeNode(9),
-            solution.new TreeNode(20,
-                solution.new TreeNode(15),
-                solution.new TreeNode(7)));
+        final var tree = new TreeNode(3,
+            new TreeNode(9),
+            new TreeNode(20,
+                new TreeNode(15),
+                new TreeNode(7)));
 
         // act
         final var result = solution.zigzagLevelOrder(tree);

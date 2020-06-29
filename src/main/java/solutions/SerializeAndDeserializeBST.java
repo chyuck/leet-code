@@ -1,5 +1,7 @@
 package solutions;
 
+import structures.TreeNode;
+
 /**
  * Solution for https://leetcode.com/problems/serialize-and-deserialize-bst problem with
  * Time complexity: O(n)
@@ -81,17 +83,5 @@ public class SerializeAndDeserializeBST {
         node.right = deserialize(values, max);
 
         return node;
-    }
-
-    public class TreeNode {
-        final int val;
-        TreeNode left;
-        TreeNode right;
-        public TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this(val);
-            this.left = left;
-            this.right = right;
-        }
     }
 }

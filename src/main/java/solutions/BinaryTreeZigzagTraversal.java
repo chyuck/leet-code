@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
+import structures.TreeNode;
+
 /**
  * Solutions for https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal problem with
  * Time complexity: O(n)
@@ -68,22 +70,5 @@ public class BinaryTreeZigzagTraversal {
         if (node == null)
             return;
         stack.push(node);
-    }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        public TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this(val);
-            this.left = left;
-            this.right = right;
-        }
-
-        @Override
-        public String toString() {
-            return Integer.toString(this.val);
-        }
     }
 }

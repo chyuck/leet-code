@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import structures.TreeNode;
+
 /**
  * Solutions for https://leetcode.com/problems/binary-tree-right-side-view problem with
  * Time complexity: O(n)
@@ -43,17 +45,5 @@ public class BinaryTreeRightSideView {
         }
 
         return results;
-    }
-
-    public class TreeNode {
-        final int val;
-        TreeNode left;
-        TreeNode right;
-        public TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this(val);
-            this.left = left;
-            this.right = right;
-        }
     }
 }

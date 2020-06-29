@@ -1,23 +1,27 @@
 package solutions;
 
 import org.junit.Test;
+
+import structures.TreeNode;
+
 import static org.junit.Assert.*;
 
 public class LowestCommonAncestorOfBSTTests {
 
-    private static LowestCommonAncestorOfBST.TreeNode createTree(final LowestCommonAncestorOfBST solution) {
-        return solution.new TreeNode(6,
-                solution.new TreeNode(2,
-                        solution.new TreeNode(0),
-                        solution.new TreeNode(4,
-                                solution.new TreeNode(3),
-                                solution.new TreeNode(5))),
-                solution.new TreeNode(8,
-                        solution.new TreeNode(7),
-                        solution.new TreeNode(9)));
+    private static TreeNode createTree(final LowestCommonAncestorOfBST solution) {
+        return new TreeNode(6,
+                new TreeNode(2,
+                        new TreeNode(0),
+                        new TreeNode(4,
+                                new TreeNode(3),
+                                new TreeNode(5))),
+                new TreeNode(8,
+                        new TreeNode(7),
+                        new TreeNode(9)));
     }
 
-    @Test public void testExample1() {
+    @Test
+    public void testExample1() {
         // arrange
         var solution = new LowestCommonAncestorOfBST();
 
@@ -36,7 +40,8 @@ public class LowestCommonAncestorOfBSTTests {
         assertEquals(root, result);
     }
 
-    @Test public void testExample2() {
+    @Test
+    public void testExample2() {
         // arrange
         var solution = new LowestCommonAncestorOfBST();
 

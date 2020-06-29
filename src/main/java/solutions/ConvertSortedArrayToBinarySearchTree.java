@@ -1,5 +1,7 @@
 package solutions;
 
+import structures.TreeNode;
+
 /**
  * Solution for https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/ problem with
  * Time complexity: O(n)
@@ -31,15 +33,5 @@ public class ConvertSortedArrayToBinarySearchTree {
         node.right = createBST(nums, middleIndex + 1, endIndex);
 
         return node;
-    }
-
-    public class TreeNode {
-        final int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
     }
 }

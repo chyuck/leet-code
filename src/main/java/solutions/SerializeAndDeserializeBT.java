@@ -3,6 +3,8 @@ package solutions;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import structures.TreeNode;
+
 /**
  * Solution for https://leetcode.com/problems/serialize-and-deserialize-binary-tree/ problem with
  * Time complexity: O(n)
@@ -91,21 +93,5 @@ public class SerializeAndDeserializeBT {
         }
 
         return root;
-    }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
     }
 }

@@ -1,5 +1,7 @@
 package solutions;
 
+import structures.TreeNode;
+
 /**
  * Solution for https://leetcode.com/problems/symmetric-tree/ problem with
  * Time complexity: O(T1 + T2)
@@ -7,22 +9,6 @@ package solutions;
  * where T1, T2 - number of nodes in trees
  */
 public class SymmetricTree {
-
-    public class TreeNode {
-        public final int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        public TreeNode(int val) {
-            this.val = val;
-        }
-
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this(val);
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {

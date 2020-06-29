@@ -1,6 +1,9 @@
 package solutions;
 
 import org.junit.Test;
+
+import structures.TreeNode;
+
 import static org.junit.Assert.*;
 
 public class MergeTwoBinaryTreesTests {
@@ -9,18 +12,18 @@ public class MergeTwoBinaryTreesTests {
         // arrange
         var solution = new MergeTwoBinaryTrees();
 
-        var tree1 = solution.new TreeNode(1,
-                solution.new TreeNode(3,
-                        solution.new TreeNode(5),
+        var tree1 = new TreeNode(1,
+                new TreeNode(3,
+                        new TreeNode(5),
                         null),
-                solution.new TreeNode(2));
-        var tree2 = solution.new TreeNode(2,
-                solution.new TreeNode(1,
+                new TreeNode(2));
+        var tree2 = new TreeNode(2,
+                new TreeNode(1,
                         null,
-                        solution.new TreeNode(4)),
-                solution.new TreeNode(3,
+                        new TreeNode(4)),
+                new TreeNode(3,
                         null,
-                        solution.new TreeNode(7)));
+                        new TreeNode(7)));
 
         // act
         var result = solution.mergeTrees(tree1, tree2);

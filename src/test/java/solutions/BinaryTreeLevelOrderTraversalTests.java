@@ -2,19 +2,23 @@ package solutions;
 
 import org.junit.Test;
 import java.util.List;
+
+import structures.TreeNode;
+
 import static org.junit.Assert.*;
 
 public class BinaryTreeLevelOrderTraversalTests {
 
-    @Test public void testExample() {
+    @Test
+    public void testExample() {
         // arrange
         var solution = new BinaryTreeLevelOrderTraversal();
 
-        var tree = solution.new TreeNode(3,
-                solution.new TreeNode(9),
-                solution.new TreeNode(20,
-                        solution.new TreeNode(15),
-                        solution.new TreeNode(7)));
+        var tree = new TreeNode(3,
+                new TreeNode(9),
+                new TreeNode(20,
+                        new TreeNode(15),
+                        new TreeNode(7)));
 
         // act
         var result = solution.levelOrder(tree);

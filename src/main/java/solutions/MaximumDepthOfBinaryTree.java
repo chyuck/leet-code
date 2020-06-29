@@ -1,5 +1,7 @@
 package solutions;
 
+import structures.TreeNode;
+
 /**
  * Solution for https://leetcode.com/problems/maximum-depth-of-binary-tree/ problem with
  * Time complexity: O(n)
@@ -17,21 +19,5 @@ public class MaximumDepthOfBinaryTree {
         }
 
         return Math.max(getMaxDepth(node.left, depth + 1), getMaxDepth(node.right, depth + 1));
-    }
-
-    public class TreeNode {
-        final int val;
-        final TreeNode left;
-        final TreeNode right;
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-
-        TreeNode(int val) {
-            this(val, null, null);
-        }
     }
 }

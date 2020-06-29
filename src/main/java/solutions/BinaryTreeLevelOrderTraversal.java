@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import structures.TreeNode;
+
 /**
  * Solution for https://leetcode.com/problems/binary-tree-level-order-traversal/ problem with
  * Time complexity: O(n)
@@ -55,21 +57,5 @@ public class BinaryTreeLevelOrderTraversal {
 
         // return results
         return results;
-    }
-
-    public class TreeNode {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        public TreeNode(int val) {
-            this.val = val;
-        }
-
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this(val);
-            this.left = left;
-            this.right = right;
-        }
     }
 }

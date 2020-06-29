@@ -2,6 +2,8 @@ package solutions;
 
 import org.junit.Test;
 
+import structures.TreeNode;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -12,13 +14,13 @@ public class SymmetricTreeTests {
         // arrange
         var solution = new SymmetricTree();
 
-        var tree = solution.new TreeNode(1,
-            solution.new TreeNode(2,
-                solution.new TreeNode(3),
-                solution.new TreeNode(4)),
-            solution.new TreeNode(2,
-                solution.new TreeNode(4),
-                solution.new TreeNode(3)));
+        var tree = new TreeNode(1,
+            new TreeNode(2,
+                new TreeNode(3),
+                new TreeNode(4)),
+            new TreeNode(2,
+                new TreeNode(4),
+                new TreeNode(3)));
 
         // act
         var result = solution.isSymmetric(tree);
@@ -32,13 +34,13 @@ public class SymmetricTreeTests {
         // arrange
         var solution = new SymmetricTree();
 
-        var tree = solution.new TreeNode(1,
-            solution.new TreeNode(2,
+        var tree = new TreeNode(1,
+            new TreeNode(2,
                 null,
-                solution.new TreeNode(3)),
-            solution.new TreeNode(2,
+                new TreeNode(3)),
+            new TreeNode(2,
                 null,
-                solution.new TreeNode(3)));
+                new TreeNode(3)));
 
         // act
         var result = solution.isSymmetric(tree);

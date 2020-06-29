@@ -1,23 +1,27 @@
 package solutions;
 
 import org.junit.Test;
+
+import structures.TreeNode;
+
 import static org.junit.Assert.*;
 
 public class LowestCommonAncestorOfBTTests {
 
-    private static LowestCommonAncestorOfBT.TreeNode createTree(final LowestCommonAncestorOfBT solution) {
-        return solution.new TreeNode(3,
-            solution.new TreeNode(5,
-                solution.new TreeNode(6),
-                solution.new TreeNode(2,
-                    solution.new TreeNode(7),
-                    solution.new TreeNode(4))),
-            solution.new TreeNode(1,
-                solution.new TreeNode(0),
-                solution.new TreeNode(8)));
+    private static TreeNode createTree(final LowestCommonAncestorOfBT solution) {
+        return new TreeNode(3,
+            new TreeNode(5,
+                new TreeNode(6),
+                new TreeNode(2,
+                    new TreeNode(7),
+                    new TreeNode(4))),
+            new TreeNode(1,
+                new TreeNode(0),
+                new TreeNode(8)));
     }
 
-    @Test public void testExample1ForSolution1() {
+    @Test
+    public void testExample1ForSolution1() {
         // arrange
         final var solution = new LowestCommonAncestorOfBT();
 
@@ -36,7 +40,8 @@ public class LowestCommonAncestorOfBTTests {
         assertEquals(root, result);
     }
 
-    @Test public void testExample2ForSolution1() {
+    @Test
+    public void testExample2ForSolution1() {
         // arrange
         final var solution = new LowestCommonAncestorOfBT();
 
@@ -54,7 +59,8 @@ public class LowestCommonAncestorOfBTTests {
         assertEquals(p, result);
     }
 
-    @Test public void testExample1ForSolution2() {
+    @Test
+    public void testExample1ForSolution2() {
         // arrange
         final var solution = new LowestCommonAncestorOfBT();
 
@@ -73,7 +79,8 @@ public class LowestCommonAncestorOfBTTests {
         assertEquals(root, result);
     }
 
-    @Test public void testExample2ForSolution2() {
+    @Test
+    public void testExample2ForSolution2() {
         // arrange
         final var solution = new LowestCommonAncestorOfBT();
 

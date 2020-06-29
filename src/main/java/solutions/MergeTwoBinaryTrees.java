@@ -1,5 +1,7 @@
 package solutions;
 
+import structures.TreeNode;
+
 /**
  * Solution for https://leetcode.com/problems/merge-two-binary-trees/ problem with
  * Time complexity: O(T1 + T2)
@@ -19,21 +21,5 @@ public class MergeTwoBinaryTrees {
         result.right = mergeTrees(t1.right, t2.right);
 
         return result;
-    }
-
-    public class TreeNode {
-        public final int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        public TreeNode(int val) {
-            this.val = val;
-        }
-
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this(val);
-            this.left = left;
-            this.right = right;
-        }
     }
 }

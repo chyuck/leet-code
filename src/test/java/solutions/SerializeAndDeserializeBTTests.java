@@ -1,6 +1,9 @@
 package solutions;
 
 import org.junit.Test;
+
+import structures.TreeNode;
+
 import static org.junit.Assert.*;
 
 public class SerializeAndDeserializeBTTests {
@@ -9,11 +12,11 @@ public class SerializeAndDeserializeBTTests {
         // arrange
         final var solution = new SerializeAndDeserializeBT();
 
-        final var input = solution.new TreeNode(1,
-            solution.new TreeNode(2, null, null),
-            solution.new TreeNode(3,
-                solution.new TreeNode(4, null, null),
-                solution.new TreeNode(5, null, null)));
+        final var input = new TreeNode(1,
+            new TreeNode(2, null, null),
+            new TreeNode(3,
+                new TreeNode(4, null, null),
+                new TreeNode(5, null, null)));
 
         // act
         final var result = solution.deserialize(solution.serialize(input));

@@ -1,6 +1,9 @@
 package solutions;
 
 import org.junit.Test;
+
+import structures.TreeNode;
+
 import static org.junit.Assert.*;
 
 public class ConvertBSTtoGreaterTreeTests {
@@ -9,9 +12,9 @@ public class ConvertBSTtoGreaterTreeTests {
         // arrange
         var solution = new ConvertBSTtoGreaterTree();
 
-        var tree = solution.new TreeNode(5,
-                solution.new TreeNode(2),
-                solution.new TreeNode(13));
+        var tree = new TreeNode(5,
+                new TreeNode(2),
+                new TreeNode(13));
 
         // act
         var result = solution.convertBST(tree);
