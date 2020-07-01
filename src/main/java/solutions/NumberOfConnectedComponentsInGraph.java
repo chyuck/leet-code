@@ -12,7 +12,7 @@ import java.util.Set;
  * Time complexity: O(n)
  * Space complexity: O(n)
  */
-public class NumberOfConnectedComponentsInAnUndirectedGraph {
+public class NumberOfConnectedComponentsInGraph {
 
     public int countComponents(int n, int[][] edges) {
         Map<Integer, List<Integer>> graph = buildGraph(edges);
