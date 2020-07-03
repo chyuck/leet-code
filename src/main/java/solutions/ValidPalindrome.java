@@ -1,5 +1,10 @@
 package solutions;
 
+/**
+ * Solutions for https://leetcode.com/problems/valid-palindrome/ problem with
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ */
 public class ValidPalindrome {
 
     public boolean isPalindrome(String s) {
@@ -35,6 +40,6 @@ public class ValidPalindrome {
     }
 
     private boolean isAlphaNumeric(char c) {
-        return Character.isLetter(c) || Character.isLetter(c);
+        return Character.isLetter(c) || Character.isDigit(c);
     }
 }
