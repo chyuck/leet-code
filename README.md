@@ -86,6 +86,7 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 242 | Easy | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | [ValidAnagram.java](src/main/java/solutions/ValidAnagram.java) ([Tests](src/test/java/solutions/ValidAnagramTests.java)) |
 | 252 | Easy | [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/) | [MeetingRooms.java](src/main/java/solutions/MeetingRooms.java) ([Tests](src/test/java/solutions/MeetingRoomsTests.java)) |
 | 253 | Medium | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/) | [MeetingRooms2.java](src/main/java/solutions/MeetingRooms2.java) ([Tests](src/test/java/solutions/MeetingRooms2Tests.java)) |
+| 257 | Easy | [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | [BinaryTreePaths.java](src/main/java/solutions/BinaryTreePaths.java) ([Tests](src/test/java/solutions/BinaryTreePathsTests.java)) |
 | 268 | Easy | [Missing Number](https://leetcode.com/problems/missing-number/) | [MissingNumber.java](src/main/java/solutions/MissingNumber.java) ([Tests](src/test/java/solutions/MissingNumberTests.java)) |
 | 269 | Hard | [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/) | [AlienDictionary.java](src/main/java/solutions/AlienDictionary.java) ([Tests](src/test/java/solutions/AlienDictionaryTests.java)) |
 | 273 | Hard | [Integer to English Words](https://leetcode.com/problems/integer-to-english-words/) | [IntegerToEnglishWords.java](src/main/java/solutions/IntegerToEnglishWords.java) ([Tests](src/test/java/solutions/IntegerToEnglishWordsTests.java)) |
