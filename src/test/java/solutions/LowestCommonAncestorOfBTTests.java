@@ -58,43 +58,4 @@ public class LowestCommonAncestorOfBTTests {
         // assert
         assertEquals(p, result);
     }
-
-    @Test
-    public void testExample1ForSolution2() {
-        // arrange
-        final var solution = new LowestCommonAncestorOfBT();
-
-        final var root = createTree(solution);
-        assert root.val == 3;
-
-        final var p = root.left;
-        assert p.val == 5;
-        final var q = root.right;
-        assert q.val == 1;
-
-        // act
-        final var result = solution.lowestCommonAncestor2(root, p, q);
-
-        // assert
-        assertEquals(root, result);
-    }
-
-    @Test
-    public void testExample2ForSolution2() {
-        // arrange
-        final var solution = new LowestCommonAncestorOfBT();
-
-        final var root = createTree(solution);
-
-        final var p = root.left;
-        assert p.val == 5;
-        final var q = p.right.right;
-        assert q.val == 4;
-
-        // act
-        final var result = solution.lowestCommonAncestor2(root, p, q);
-
-        // assert
-        assertEquals(p, result);
-    }
 }
