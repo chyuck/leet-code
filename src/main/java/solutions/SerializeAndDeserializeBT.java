@@ -1,6 +1,7 @@
 package solutions;
 
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 
 import structures.TreeNode;
@@ -13,85 +14,70 @@ import structures.TreeNode;
  */
 public class SerializeAndDeserializeBT {
 
-    // Encodes a tree to a single string.
+    private static final String NULL_VALUE = "n";
+
     public String serialize(TreeNode root) {
-        // return empty string for empty tree
-        if (root == null) return "";
-
-        // create string builder to accumulate serialization result
-        final StringBuilder builder = new StringBuilder();
-        // add root element
-        builder.append(root.val);
-
-        // create queue to traverse nodes level by level from top to bottom
-        final Queue<TreeNode> queue = new LinkedList<>();
-        // add left and right nodes
-        queue.add(root.left);
-        queue.add(root.right);
-
-        // iterate through queue
-        while (!queue.isEmpty()) {
-            // remove node from queue
-            final TreeNode node = queue.poll();
-
-            // for null element, add "null"
-            if (node == null) {
-                builder.append(",null");
-                continue;
-            }
-
-            // for not null, append node value
-            builder.append(",");
-            builder.append(node.val);
-
-            // push to queue left and right nodes
-            queue.add(node.left);
-            queue.add(node.right);
+        if (root == null) {
+            return "";
         }
 
-        return builder.toString();
-    }
+        StringBuilder results = new StringBuilder();
+        results.append(root.val);
 
-    // Decodes your encoded data to tree.
-    public TreeNode deserialize(String data) {
-        // return null for empty string
-        if (data == null || data.length() == 0) return null;
-
-        // Split data by comma to get all values
-        final String[] values = data.split(",");
-
-        // create root node
-        final TreeNode root = new TreeNode(Integer.parseInt(values[0]));
-
-        // create queue to build nodes level by level from top to bottom
-        final Queue<TreeNode> queue = new LinkedList<>();
-        // add first node to queue
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
-        // index in values array
-        int index = 0;
-        // pull from queue until it is empty
         while (!queue.isEmpty()) {
-            // pull parent node from queue
-            final TreeNode parent = queue.poll();
+            TreeNode node = queue.remove();
 
-            // left child node
-            index++;
-            if (!values[index].equals("null")) {
-                final TreeNode node = new TreeNode(Integer.parseInt(values[index]));
-                parent.left = node;
-                queue.add(node);
-            }
+            serializeNode(node.left, queue, results);
+            serializeNode(node.right, queue, results);
+        }
 
-            // right child node
-            index++;
-            if (!values[index].equals("null")) {
-                final TreeNode node = new TreeNode(Integer.parseInt(values[index]));
-                parent.right = node;
-                queue.add(node);
-            }
+        return results.toString();
+    }
+
+    private static void serializeNode(TreeNode node, Queue<TreeNode> queue, StringBuilder results) {
+        if (node != null) {
+            results.append(",").append(node.val);
+            queue.add(node);
+        } else {
+            results.append(",").append(NULL_VALUE);
+        }
+    }
+
+    public TreeNode deserialize(String data) {
+        if (data == null || data == "") {
+            return null;
+        }
+
+        String[] parts = data.split(",");
+
+        int index = 0;
+
+        TreeNode root = new TreeNode(Integer.parseInt(parts[index++]));
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.remove();
+
+            node.left = deserializeNode(parts[index++], queue);
+            node.right = deserializeNode(parts[index++], queue);
         }
 
         return root;
+    }
+
+    private static TreeNode deserializeNode(String value, Queue<TreeNode> queue) {
+        if (Objects.equals(value, NULL_VALUE)) {
+            return null;
+        }
+
+        TreeNode node = new TreeNode(Integer.parseInt(value));
+        queue.add(node);
+
+        return node;
     }
 }

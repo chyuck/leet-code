@@ -8,7 +8,8 @@ import static org.junit.Assert.*;
 
 public class SerializeAndDeserializeBTTests {
 
-    @Test public void testExample() {
+    @Test
+    public void testExample() {
         // arrange
         final var solution = new SerializeAndDeserializeBT();
 
