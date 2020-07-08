@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 
 public class ProductOfArrayExceptSelfTests {
 
-    @Test public void testExample() {
+    @Test
+    public void testExample() {
         // arrange
         var solution = new ProductOfArrayExceptSelf();
 
