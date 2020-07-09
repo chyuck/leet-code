@@ -9,61 +9,136 @@ import java.util.Map;
  * Space complexity: O(S + T)
  */
 public class MinimumWindowSubstring {
+
     public String minWindow(String s, String t) {
-        if (s == null || s.length() == 0 || t == null || t.length() == 0 || t.length() > s.length()) {
+        if (s == null || s.length() == 0 || t == null || t.length() == 0) {
             return "";
         }
 
-        Map<Character, Integer> targetChars = new HashMap<>();
-        Map<Character, Integer> currentChars = new HashMap<>();
-        for (int i = 0; i < t.length(); i++) {
-            Character ch = t.charAt(i);
-            Integer count = targetChars.getOrDefault(ch, 0) + 1;
+        Map<Character, Integer> targetCounts = createTargetCountMap(t);
 
-            targetChars.put(ch, count);
-            currentChars.put(ch, 0);
+        return findMinWindow(s, targetCounts, t.length());
+    }
+
+    private static Map<Character, Integer> createTargetCountMap(String t) {
+        Map<Character, Integer> result = new HashMap<>();
+
+        for (int i = 0; i < t.length(); i++){
+            Character c = t.charAt(i);
+            Integer count = result.getOrDefault(c, 0);
+
+            result.put(c, count + 1);
         }
 
-        int targetCount = t.length(), currentCount = 0;
+        return result;
+    }
 
-        int start = 0, end = 0;
-        int resultStart = -1, resultEnd = -1;
+    private static class Pointers {
+        int start;
+        int end;
 
-        while (end < s.length()) {
-            while (end < s.length() && currentCount < targetCount) {
-                Character curr = s.charAt(end);
+        Pointers(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+    }
 
-                if (targetChars.containsKey(curr)) {
-                    if (currentChars.get(curr) < targetChars.get(curr)) {
-                        currentCount++;
-                    }
+    private static class Sizes {
+        final int target;
+        int current;
 
-                    currentChars.put(curr, currentChars.get(curr) + 1);
-                }
+        Sizes(int target, int current) {
+            this.target = target;
+            this.current = current;
+        }
+    }
 
-                end++;
-            }
+    private static String findMinWindow(String s, Map<Character, Integer> targetCounts, int targetSize) {
+        Pointers result = new Pointers(-1,  s.length());
+        Pointers pointers = new Pointers(0, 0);
 
-            while (currentCount == targetCount) {
-                Character curr = s.charAt(start);
+        Map<Character, Integer> currentCounts = new HashMap<>();
+        Sizes sizes = new Sizes(targetSize, 0);
 
-                if (resultStart == -1 || end - start < resultEnd - resultStart) {
-                    resultStart = start;
-                    resultEnd = end;
-                }
-
-                if (targetChars.containsKey(curr)) {
-                    if (currentChars.get(curr) <= targetChars.get(curr)) {
-                        currentCount--;
-                    }
-
-                    currentChars.put(curr, currentChars.get(curr) - 1);
-                }
-
-                start++;
-            }
+        while (pointers.end < s.length()) {
+            moveEndPointer(s, pointers, sizes, currentCounts, targetCounts);
+            moveStartPointer(s, pointers, sizes, currentCounts, targetCounts, result);
         }
 
-        return resultStart != -1 ? s.substring(resultStart, resultEnd) : "";
+        return createResult(result, s);
+    }
+
+    private static void moveEndPointer(String s, Pointers pointer, Sizes sizes, Map<Character, Integer> currentCounts,
+        Map<Character, Integer> targetCounts) {
+
+        while (pointer.end < s.length() && sizes.current < sizes.target) {
+            Character c = s.charAt(pointer.end);
+
+            incrementCountsAndSizes(c, sizes, currentCounts, targetCounts);
+
+            pointer.end++;
+        }
+    }
+
+    private static void incrementCountsAndSizes(Character c, Sizes sizes, Map<Character, Integer> currentCounts,
+        Map<Character, Integer> targetCounts) {
+
+        Integer targetCount = targetCounts.getOrDefault(c, 0);
+        if (targetCount == 0) {
+            return;
+        }
+
+        Integer currentCount = currentCounts.getOrDefault(c, 0);
+        currentCounts.put(c, currentCount + 1);
+
+        if (currentCount < targetCount) {
+            sizes.current++;
+        }
+    }
+
+    private static void moveStartPointer(String s, Pointers pointer, Sizes sizes, Map<Character, Integer> currentCounts,
+        Map<Character, Integer> targetCounts, Pointers result) {
+
+        while (pointer.start < pointer.end && sizes.current == sizes.target) {
+            updateResult(pointer, result);
+
+            Character c = s.charAt(pointer.start);
+            decrementCountsAndSizes(c, sizes, currentCounts, targetCounts);
+
+            pointer.start++;
+        }
+    }
+
+    private static void updateResult(Pointers pointer, Pointers result) {
+        if (pointer.end - pointer.start > result.end - result.start) {
+            return;
+        }
+
+        result.start = pointer.start;
+        result.end = pointer.end;
+    }
+
+    private static void decrementCountsAndSizes(Character c, Sizes sizes, Map<Character, Integer> currentCounts,
+        Map<Character, Integer> targetCounts) {
+
+        Integer targetCount = targetCounts.getOrDefault(c, 0);
+        if (targetCount == 0) {
+            return;
+        }
+
+        Integer currentCount = currentCounts.get(c);
+        currentCounts.put(c, currentCount - 1);
+
+        if (currentCount <= targetCount) {
+            sizes.current--;
+        }
+    }
+
+    private static String createResult(Pointers result, String s) {
+        if (result.start == -1) {
+            return "";
+        }
+
+        return s.substring(result.start, result.end);
     }
 }
