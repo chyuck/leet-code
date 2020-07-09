@@ -29,4 +29,16 @@ public class MergeIntervalsTests {
         // assert
         assertArrayEquals(new int[][] { {1,5} }, result);
     }
+
+    @Test
+    public void testCase1() {
+        // arrange
+        var solution = new MergeIntervals();
+
+        // act
+        var result = solution.merge(new int[][] { {1,4},{2,3} });
+
+        // assert
+        assertArrayEquals(new int[][] { {1,4} }, result);
+    }
 }
