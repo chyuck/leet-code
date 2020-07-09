@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 
 public class ValidParenthesesTests {
 
-    @Test public void testExample1() {
+    @Test
+    public void testExample1() {
         // arrange
         final var solution = new ValidParentheses();
 
@@ -16,7 +17,8 @@ public class ValidParenthesesTests {
         assertTrue(result);
     }
 
-    @Test public void testExample2() {
+    @Test
+    public void testExample2() {
         // arrange
         final var solution = new ValidParentheses();
 
@@ -27,7 +29,8 @@ public class ValidParenthesesTests {
         assertTrue(result);
     }
 
-    @Test public void testExample3() {
+    @Test
+    public void testExample3() {
         // arrange
         final var solution = new ValidParentheses();
 
@@ -38,7 +41,8 @@ public class ValidParenthesesTests {
         assertFalse(result);
     }
 
-    @Test public void testExample4() {
+    @Test
+    public void testExample4() {
         // arrange
         final var solution = new ValidParentheses();
 
@@ -49,7 +53,8 @@ public class ValidParenthesesTests {
         assertFalse(result);
     }
 
-    @Test public void testExample5() {
+    @Test
+    public void testExample5() {
         // arrange
         final var solution = new ValidParentheses();
 

@@ -10,36 +10,32 @@ import java.util.Stack;
 public class ValidParentheses {
 
     public boolean isValid(String s) {
-        if (s == null) return false;
-        if (s.length() == 0) return true;
+        if (s.length() == 0) {
+            return true;
+        }
 
-        final Stack<Character> stack = new Stack<>();
+        Stack<Character> stack = new Stack<>();
 
-        for (int i = 0; i < s.length(); i++) {
-            final char ch = s.charAt(i);
-
-            // push to stack all open parentheses
-            if (ch == '(' || ch == '[' || ch == '{') {
-                stack.push(ch);
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[') {
+                stack.push(c);
                 continue;
             }
 
-            // no open parentheses for closed one
-            if (stack.isEmpty())
+            if (stack.empty()) {
                 return false;
+            }
 
-            // closed parentheses should match open
-            if (ch == ')' && stack.pop() != '(')
-                return false;
+            char opened = stack.pop();
+            boolean isValid = (c == ')' && opened == '(')
+                || (c == '}' && opened == '{')
+                || (c == ']' && opened == '[');
 
-            if (ch == ']' && stack.pop() != '[')
+            if (!isValid) {
                 return false;
-
-            if (ch == '}' && stack.pop() != '{')
-                return false;
+            }
         }
 
-        // check whether all open parentheses have closed ones
-        return stack.isEmpty();
+        return stack.empty();
     }
 }
