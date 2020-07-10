@@ -8,33 +8,32 @@ package solutions;
 public class RotateArray {
 
     public void rotate(int[] nums, int k) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length <= 1) {
             return;
         }
-        if (k <= 0) {
-            return;
-        }
-        if (k % nums.length == 0) {
+
+        int steps = k % nums.length;
+        if (steps == 0) {
             return;
         }
 
         int start = 0;
 
-        int pointer = 0;
-        int num = nums[pointer];
+        int index = start;
+        int num = nums[index];
 
-        for (int i = 1; i <= nums.length; i++) {
-            int nextPointer = (pointer + k) % nums.length;
-            int nextNum = nums[nextPointer];
+        for (int i = 0; i < nums.length; i++) {
+            int nextIndex = (index + steps) % nums.length;
 
-            nums[nextPointer] = num;
-            pointer = nextPointer;
+            int nextNum = nums[nextIndex];
+            nums[nextIndex] = num;
+
             num = nextNum;
+            index = nextIndex;
 
-            if (pointer == start) {
-                start++;
-                pointer = start;
-                num = nums[pointer];
+            if (index == start) {
+                index = ++start;
+                num = nums[index];
             }
         }
     }
