@@ -1,6 +1,10 @@
 package solutions;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 /**
  * Solution for https://leetcode.com/problems/insert-delete-getrandom-o1/ problem with
@@ -10,62 +14,44 @@ import java.util.*;
  */
 public class InsertDeleteGetRandomO1 {
 
-    private final List<Integer> array = new ArrayList<>();
-    private final Map<Integer, Integer> map = new HashMap<>();
+    private final List<Integer> values = new ArrayList<>();
+    private final Map<Integer, Integer> indexes = new HashMap<>();
 
-    /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     public boolean insert(int val) {
-        // if value exists, then return false
-        if (map.containsKey(val))
+        if (indexes.containsKey(val)) {
             return false;
+        }
 
-        // add value to hash map with index in array
-        map.put(val, array.size());
-        // add value to array
-        array.add(val);
+        values.add(val);
+        indexes.put(val, values.size() - 1);
 
-        // return true, because value is new
         return true;
     }
 
-    /** Removes a value from the set. Returns true if the set contained the specified element. */
     public boolean remove(int val) {
-        // if value does not exist, then return false
-        if (!map.containsKey(val))
+        Integer index = indexes.get(val);
+        if (index == null) {
             return false;
-
-        // remove value from hash map and save index
-        int index = map.remove(val);
-        // save last index
-        int lastIndex = array.size() - 1;
-
-        // if value is the last value in array, then remove it and return true
-        if (index == lastIndex) {
-            array.remove(index);
-            return true;
         }
 
-        // save last value
-        Integer lastValue = array.get(lastIndex);
-        // remove last value
-        array.remove(lastIndex);
-        // set last value instead of value, to preserve indexes for the rest of values
-        array.set(index, lastValue);
-        // update index for last value in hash map
-        map.put(lastValue, index);
+        int lastIndex = values.size() - 1;
+        Integer lastValue = values.remove(lastIndex);
 
-        // return true because value was removed
+        if (index != lastIndex) {
+            values.set(index, lastValue);
+            indexes.put(lastValue, index);
+        }
+
+        indexes.remove(val);
+
         return true;
     }
 
     private final Random random = new Random();
 
-    /** Get a random element from the set. */
     public int getRandom() {
-        // generate randomly index of array
-        int randomIndex = random.nextInt(array.size());
+        int index = random.nextInt(values.size());
 
-        // return value at random index
-        return array.get(randomIndex);
+        return values.get(index);
     }
 }
