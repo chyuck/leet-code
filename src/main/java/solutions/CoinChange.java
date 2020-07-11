@@ -1,5 +1,8 @@
 package solutions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Solutions for https://leetcode.com/problems/coin-change problem with
  * Time complexity: O(S * n)
@@ -9,59 +12,43 @@ package solutions;
 public class CoinChange {
 
     public int coinChange(int[] coins, int amount) {
-        // if amount is zero, then we need zero coins
-        if (amount == 0)
-            return 0;
-        // if no coins given, then no solution
-        if (coins.length == 0)
+        if (coins == null || coins.length == 0) {
             return -1;
+        }
 
-        // create dynamic programming cache
-        int[] cache = new int[amount];
+        Map<Integer, Integer> cache = new HashMap<>();
 
         return coinChange(coins, amount, cache);
     }
 
-    private int coinChange(int[] coins, int amount, int[] cache) {
-        // if cache has solution return it
-        if (cache[amount - 1] != 0)
-            return cache[amount - 1];
-
-        // set result as impossible min value, to see whether better solution is found at the end
-        int result = amount + 1;
-
-        // iterate through all coins
-        for (int coin : coins) {
-            // if amount is equal to coin, then return 1 coin
-            // add solution to cache
-            if (coin == amount) {
-                cache[amount - 1] = 1;
-                return 1;
-            }
-
-            // if coin is greater than amount, then skip this coin
-            if (coin > amount)
-                continue;
-
-            // calculate sub result for amount without current coin
-            int subResult = coinChange(coins, amount - coin, cache);
-            // if no solution for amount without current coin, then skip this coin
-            if (subResult <= 0)
-                continue;
-
-            // calculate minimum result based on sub result for amount without current coin plus this coin
-            result = Math.min(result, subResult + 1);
-        }
-
-        // if result still has impossible min value, then no solution found for current amount
-        // return -1 and add result to cache
-        if (result == amount + 1) {
-            cache[amount - 1] = -1;
+    private int coinChange(int[] coins, int amount, Map<Integer, Integer> cache) {
+        if (amount < 0) {
             return -1;
         }
 
-        // add result to cache and return it
-        cache[amount - 1] = result;
+        if (amount == 0) {
+            return 0;
+        }
+
+        Integer cachedAmount = cache.get(amount);
+        if (cachedAmount != null) {
+            return cachedAmount;
+        }
+
+        int result = -1;
+
+        for (int coin : coins) {
+            int amountWithoutCoin = amount - coin;
+            int coinChange = coinChange(coins, amountWithoutCoin, cache);
+            if (coinChange == -1) {
+                continue;
+            }
+
+            result = result == -1 ? coinChange + 1 : Math.min(result, coinChange + 1);
+        }
+
+        cache.put(amount, result);
+
         return result;
     }
 }

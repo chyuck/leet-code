@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 
 public class CoinChangeTests {
 
-    @Test public void testExample1() {
+    @Test
+    public void testExample1() {
         // arrange
         var solution = new CoinChange();
 
@@ -16,7 +17,8 @@ public class CoinChangeTests {
         assertEquals(3, result);
     }
 
-    @Test public void testExample2() {
+    @Test
+    public void testExample2() {
         // arrange
         var solution = new CoinChange();
 
