@@ -25,6 +25,7 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 42 | Hard | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | [TrappingRainWater.java](src/main/java/solutions/TrappingRainWater.java) ([Tests](src/test/java/solutions/TrappingRainWaterTests.java)) |
 | 48 | Medium | [Rotate Image](https://leetcode.com/problems/rotate-image/) | [RotateImage.java](src/main/java/solutions/RotateImage.java) ([Tests](src/test/java/solutions/RotateImageTests.java)) |
 | 49 | Medium | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | [GroupAnagrams.java](src/main/java/solutions/GroupAnagrams.java) ([Tests](src/test/java/solutions/GroupAnagramsTests.java)) |
+| 50 | Medium | [Pow(x, n)](https://leetcode.com/problems/powx-n/) | [PowxN.java](src/main/java/solutions/PowxN.java) ([Tests](src/test/java/solutions/PowxNTests.java)) |
 | 53 | Easy | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [MaximumSubarray.java](src/main/java/solutions/MaximumSubarray.java) ([Tests](src/test/java/solutions/MaximumSubarrayTests.java)) |
 | 56 | Medium | [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | [MergeIntervals.java](src/main/java/solutions/MergeIntervals.java) ([Tests](src/test/java/solutions/MergeIntervalsTests.java)) |
 | 57 | Hard | [Insert Interval](https://leetcode.com/problems/insert-interval/) | [InsertInterval.java](src/main/java/solutions/InsertInterval.java) ([Tests](src/test/java/solutions/InsertIntervalTests.java)) |
