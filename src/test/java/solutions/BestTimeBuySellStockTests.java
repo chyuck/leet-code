@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 
 public class BestTimeBuySellStockTests {
 
-    @Test public void testExample1(){
+    @Test
+    public void testExample1(){
         // arrange
         final var solution = new BestTimeBuySellStock();
 
@@ -16,7 +17,8 @@ public class BestTimeBuySellStockTests {
         assertEquals(5, result);
     }
 
-    @Test public void testExample2(){
+    @Test
+    public void testExample2(){
         // arrange
         final var solution = new BestTimeBuySellStock();
 
