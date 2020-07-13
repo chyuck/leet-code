@@ -8,21 +8,20 @@ package solutions;
 public class BestTimeBuySellStock2 {
 
     public int maxProfit(int[] prices) {
-        if (prices == null || prices.length < 2) {
+        if (prices == null || prices.length <= 1) {
             return 0;
         }
 
-        int maxProfit = 0;
+        int result = 0;
 
         for (int i = 1; i < prices.length; i++) {
-            int prev = prices[i-1];
-            int curr = prices[i];
+            int profit = prices[i] - prices[i - 1];
 
-            if (curr > prev) {
-                maxProfit += curr - prev;
+            if (profit > 0) {
+                result += profit;
             }
         }
 
-        return maxProfit;
+        return result;
     }
 }
