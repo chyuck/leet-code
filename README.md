@@ -68,6 +68,7 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 169 | Easy | [Majority Element](https://leetcode.com/problems/majority-element/) | [MajorityElement.java](src/main/java/solutions/MajorityElement.java) ([Tests](src/test/java/solutions/MajorityElementTests.java)) |
 | 171 | Easy | [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/) | [ExcelSheetColumnNumber.java](src/main/java/solutions/ExcelSheetColumnNumber.java) ([Tests](src/test/java/solutions/ExcelSheetColumnNumberTests.java)) |
 | 184 | Medium | [Department Highest Salary](https://leetcode.com/problems/department-highest-salary/) | [DepartmentHighestSalary.sql](src/main/sql/DepartmentHighestSalary.sql) |
+| 188 | Hard | [Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) | [BestTimeBuySellStock4.java](src/main/java/solutions/BestTimeBuySellStock4.java) ([Tests](src/test/java/solutions/BestTimeBuySellStock4Tests.java)) |
 | 189 | Easy | [Rotate Array](https://leetcode.com/problems/rotate-array/) | [RotateArray.java](src/main/java/solutions/RotateArray.java) ([Tests](src/test/java/solutions/RotateArrayTests.java)) |
 | 190 | Easy | [Reverse Bits](https://leetcode.com/problems/reverse-bits/) | [ReverseBits.java](src/main/java/solutions/ReverseBits.java) ([Tests](src/test/java/solutions/ReverseBitsTests.java)) |
 | 198 | Easy | [House Robber](https://leetcode.com/problems/house-robber/) | [HouseRobber.java](src/main/java/solutions/HouseRobber.java) ([Tests](src/test/java/solutions/HouseRobberTests.java)) |
