@@ -12,21 +12,20 @@ public class MoveZeroes {
             return;
         }
 
-        int pointer = 0;
+        int zeroPointer = 0;
+        int nonZeroPointer = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-
-            if (nums[i] == 0) {
-                continue;
+        while (nonZeroPointer < nums.length) {
+            if (nums[nonZeroPointer] == 0) {
+                nonZeroPointer++;
+            } else {
+                if (zeroPointer < nonZeroPointer) {
+                    nums[zeroPointer] = nums[nonZeroPointer];
+                    nums[nonZeroPointer] = 0;
+                }
+                zeroPointer++;
+                nonZeroPointer++;
             }
-
-            if (pointer == i) {
-                pointer++;
-                continue;
-            }
-
-            nums[pointer++] = nums[i];
-            nums[i] = 0;
         }
     }
 }
