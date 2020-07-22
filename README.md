@@ -30,6 +30,7 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 53 | Easy | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [MaximumSubarray.java](src/main/java/solutions/MaximumSubarray.java) ([Tests](src/test/java/solutions/MaximumSubarrayTests.java)) |
 | 56 | Medium | [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | [MergeIntervals.java](src/main/java/solutions/MergeIntervals.java) ([Tests](src/test/java/solutions/MergeIntervalsTests.java)) |
 | 57 | Hard | [Insert Interval](https://leetcode.com/problems/insert-interval/) | [InsertInterval.java](src/main/java/solutions/InsertInterval.java) ([Tests](src/test/java/solutions/InsertIntervalTests.java)) |
+| 65 | Hard | [Valid Number](https://leetcode.com/problems/valid-number/) | [ValidNumber.java](src/main/java/solutions/ValidNumber.java) ([Tests](src/test/java/solutions/ValidNumberTests.java)) |
 | 66 | Easy | [Plus One](https://leetcode.com/problems/plus-one/) | [PlusOne.java](src/main/java/solutions/PlusOne.java) ([Tests](src/test/java/solutions/PlusOneTests.java)) |
 | 67 | Easy | [Add Binary](https://leetcode.com/problems/add-binary/) | [AddBinary.java](src/main/java/solutions/AddBinary.java) ([Tests](src/test/java/solutions/AddBinaryTests.java)) |
 | 69 | Easy | [Sqrt(x)](https://leetcode.com/problems/sqrtx/) | [Sqrtx.java](src/main/java/solutions/Sqrtx.java) ([Tests](src/test/java/solutions/SqrtxTests.java)) |
