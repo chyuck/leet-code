@@ -35,6 +35,7 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 67 | Easy | [Add Binary](https://leetcode.com/problems/add-binary/) | [AddBinary.java](src/main/java/solutions/AddBinary.java) ([Tests](src/test/java/solutions/AddBinaryTests.java)) |
 | 69 | Easy | [Sqrt(x)](https://leetcode.com/problems/sqrtx/) | [Sqrtx.java](src/main/java/solutions/Sqrtx.java) ([Tests](src/test/java/solutions/SqrtxTests.java)) |
 | 70 | Easy | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | [ClimbingStairs.java](src/main/java/solutions/ClimbingStairs.java) ([Tests](src/test/java/solutions/ClimbingStairsTests.java)) |
+| 71 | Medium | [Simplify Path](https://leetcode.com/problems/simplify-path/) | [SimplifyPath.java](src/main/java/solutions/SimplifyPath.java) ([Tests](src/test/java/solutions/SimplifyPathTests.java)) |
 | 73 | Medium | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | [SetMatrixZeroes.java](src/main/java/solutions/SetMatrixZeroes.java) ([Tests](src/test/java/solutions/SetMatrixZeroesTests.java)) |
 | 76 | Hard | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | [MinimumWindowSubstring.java](src/main/java/solutions/MinimumWindowSubstring.java) ([Tests](src/test/java/solutions/MinimumWindowSubstringTests.java)) |
 | 78 | Medium | [Subsets](https://leetcode.com/problems/subsets/) | [Subsets.java](src/main/java/solutions/Subsets.java) ([Tests](src/test/java/solutions/SubsetsTests.java)) |
