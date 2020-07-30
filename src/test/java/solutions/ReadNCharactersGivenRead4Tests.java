@@ -8,7 +8,8 @@ public class ReadNCharactersGivenRead4Tests {
     @Test
     public void testExample1(){
         // arrange
-        var solution = new ReadNCharactersGivenRead4("abc");
+        var wrapper = new ReadNCharactersGivenRead4();
+        var solution = wrapper.new Solution("abc");
 
         char[] buf = new char[3];
 
@@ -23,7 +24,8 @@ public class ReadNCharactersGivenRead4Tests {
     @Test
     public void testExample2(){
         // arrange
-        var solution = new ReadNCharactersGivenRead4("abcde");
+        var wrapper = new ReadNCharactersGivenRead4();
+        var solution = wrapper.new Solution("abcde");
 
         char[] buf = new char[5];
 
@@ -38,7 +40,8 @@ public class ReadNCharactersGivenRead4Tests {
     @Test
     public void testExample3(){
         // arrange
-        var solution = new ReadNCharactersGivenRead4("abcdABCD1234");
+        var wrapper = new ReadNCharactersGivenRead4();
+        var solution = wrapper.new Solution("abcdABCD1234");
 
         char[] buf = new char[12];
 
@@ -53,7 +56,8 @@ public class ReadNCharactersGivenRead4Tests {
     @Test
     public void testExample4(){
         // arrange
-        var solution = new ReadNCharactersGivenRead4("leetcode");
+        var wrapper = new ReadNCharactersGivenRead4();
+        var solution = wrapper.new Solution("leetcode");
 
         char[] buf = new char[5];
 
