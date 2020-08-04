@@ -19,14 +19,14 @@ public class NestedListWeightSum {
         int result = 0;
 
         for (NestedInteger ni : nestedList) {
-            result += depthSum(ni, depth);
+            if (ni.isInteger()) {
+                result += ni.getInteger() * depth;
+            } else {
+                result += depthSum(ni.getList(), depth + 1);
+            }
         }
 
         return result;
-    }
-
-    private static int depthSum(NestedInteger ni, int depth) {
-        return ni.isInteger() ? ni.getInteger() * depth : depthSum(ni.getList(), depth + 1);
     }
 
     static class NestedInteger {
