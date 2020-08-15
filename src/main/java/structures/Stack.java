@@ -46,7 +46,7 @@ public class Stack<DataType> {
      * Returns the element without removing it
      * Time complexity: O(1)
      */
-    public DataType peak() {
+    public DataType peek() {
         // no elements
         if (firstNode == null)
             throw new IllegalStateException("No elements.");

@@ -16,7 +16,7 @@ public class StackTests {
 
         assertEquals((Integer)3, stack.push(3));
 
-        assertEquals((Integer)3, stack.peak());
+        assertEquals((Integer)3, stack.peek());
         assertFalse(stack.isEmpty());
         assertEquals((Integer)3, stack.pop());
         assertFalse(stack.isEmpty());
