@@ -16,7 +16,10 @@ public class HitCounter {
 
     private final Hit[] hits = new Hit[WINDOW_SIZE_IN_SECONDS];
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     * Time complexity: O(T)
+     */
     public HitCounter() {
         for (int i = 0; i < hits.length; i++) {
             hits[i] = new Hit();
