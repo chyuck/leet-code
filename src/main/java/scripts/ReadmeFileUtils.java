@@ -95,6 +95,8 @@ final class ReadmeFileUtils {
             sortedMap.put(newLineNumber, newLine);
         }
 
+        System.out.printf("Total solutions: %s%s", sortedMap.size(), System.lineSeparator());
+
         for (var value : sortedMap.values()) {
             sb.append(value);
             sb.append(System.lineSeparator());

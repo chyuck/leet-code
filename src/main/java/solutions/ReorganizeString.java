@@ -29,7 +29,7 @@ public class ReorganizeString {
         return buildResult(priorityQueue);
     }
 
-    private Map<Character, Integer> getCounts(String s) {
+    private static Map<Character, Integer> getCounts(String s) {
         Map<Character, Integer> result = new HashMap<>();
 
         for (int i = 0; i < s.length(); i++) {
@@ -41,7 +41,7 @@ public class ReorganizeString {
         return result;
     }
 
-    private boolean canReorganize(Map<Character, Integer> counts, int length) {
+    private static boolean canReorganize(Map<Character, Integer> counts, int length) {
         int maxCount = (length + 1) / 2;
 
         for (Integer count : counts.values()) {
@@ -63,7 +63,7 @@ public class ReorganizeString {
         }
     }
 
-    private Queue<CharCount> createPriorityQueue(Map<Character, Integer> counts) {
+    private static Queue<CharCount> createPriorityQueue(Map<Character, Integer> counts) {
         Queue<CharCount> result = new PriorityQueue<>((a, b) -> {
            // higher count first
            if (a.count != b.count) {
@@ -82,7 +82,7 @@ public class ReorganizeString {
         return result;
     }
 
-    private String buildResult(Queue<CharCount> priorityQueue) {
+    private static String buildResult(Queue<CharCount> priorityQueue) {
         StringBuilder result = new StringBuilder();
 
         while (priorityQueue.size() > 1) {
