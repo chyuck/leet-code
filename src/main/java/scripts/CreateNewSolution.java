@@ -102,7 +102,7 @@ public class CreateNewSolution {
         appendLine(sb, "public class " + name + "Tests {");
         appendLine(sb, StringUtils.EMPTY);
         appendLine(sb, "    @Test");
-        appendLine(sb, "    public void testExample1(){");
+        appendLine(sb, "    public void testExample1() {");
         appendLine(sb, "        // arrange");
         appendLine(sb, "        var solution = new " + name + "();");
         appendLine(sb, StringUtils.EMPTY);
