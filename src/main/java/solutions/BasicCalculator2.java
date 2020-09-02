@@ -13,7 +13,7 @@ public class BasicCalculator2 {
         int number = 0;
 
         char lastSign = '+';
-        int localSum = 0;
+        int subResult = 0;
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
@@ -24,21 +24,20 @@ public class BasicCalculator2 {
             }
 
             if (c == '+' || c == '-' || c == '*' || c == '/' || i == s.length() - 1) {
-
                 switch (lastSign) {
                     case '+':
-                        result += localSum;
-                        localSum = number;
+                        result += subResult;
+                        subResult = number;
                         break;
                     case '-':
-                        result += localSum;
-                        localSum = -number;
+                        result += subResult;
+                        subResult = -number;
                         break;
                     case '*':
-                        localSum *= number;
+                        subResult *= number;
                         break;
                     case '/':
-                        localSum /= number;
+                        subResult /= number;
                         break;
                 }
 
@@ -47,7 +46,7 @@ public class BasicCalculator2 {
             }
         }
 
-        result += localSum;
+        result += subResult;
 
         return result;
     }
