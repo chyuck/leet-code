@@ -36,13 +36,7 @@ public class BasicCalculator {
             char c = exp.charAt(index[0]);
 
             if (Character.isDigit(c)) {
-                int number = 0;
-                while (index[0] < exp.length() && Character.isDigit(exp.charAt(index[0]))) {
-                    int digit = exp.charAt(index[0]) - '0';
-                    number = number * 10 + digit;
-                    index[0]++;
-                }
-
+                int number = getNumber(exp, index);
                 result += sign * number;
             } else if (c == '+') {
                 sign = 1;
@@ -60,5 +54,16 @@ public class BasicCalculator {
         }
 
         return result;
+    }
+
+    private static int getNumber(String exp, int[] index) {
+        int number = 0;
+        while (index[0] < exp.length() && Character.isDigit(exp.charAt(index[0]))) {
+            int digit = exp.charAt(index[0]) - '0';
+            number = number * 10 + digit;
+            index[0]++;
+        }
+
+        return number;
     }
 }
