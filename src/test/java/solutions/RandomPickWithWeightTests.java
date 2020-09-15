@@ -21,7 +21,7 @@ public class RandomPickWithWeightTests {
 
     @Test
     public void testExample2(){
-        runAndAssert(new int[] { 1, 3 }, 10);
+        runAndAssert(new int[] { 1, 3 }, 20);
     }
 
     @Test
