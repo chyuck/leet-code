@@ -175,6 +175,7 @@ Solutions for [LeetCode](https://leetcode.com) problems
 | 729 | Medium | [My Calendar I](https://leetcode.com/problems/my-calendar-i/) | [MyCalendar.java](src/main/java/solutions/MyCalendar.java) ([Tests](src/test/java/solutions/MyCalendarTests.java)) |
 | 733 | Easy | [Flood Fill](https://leetcode.com/problems/flood-fill/) | [FloodFill.java](src/main/java/solutions/FloodFill.java) ([Tests](src/test/java/solutions/FloodFillTests.java)) |
 | 746 | Easy | [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) | [MinCostClimbingStairs.java](src/main/java/solutions/MinCostClimbingStairs.java) ([Tests](src/test/java/solutions/MinCostClimbingStairsTests.java)) |
+| 752 | Medium | [Open the Lock](https://leetcode.com/problems/open-the-lock/) | [OpenTheLock.java](src/main/java/solutions/OpenTheLock.java) ([Tests](src/test/java/solutions/OpenTheLockTests.java)) |
 | 763 | Medium | [Partition Labels](https://leetcode.com/problems/partition-labels/) | [PartitionLabels.java](src/main/java/solutions/PartitionLabels.java) ([Tests](src/test/java/solutions/PartitionLabelsTests.java)) |
 | 767 | Medium | [Reorganize String](https://leetcode.com/problems/reorganize-string/) | [ReorganizeString.java](src/main/java/solutions/ReorganizeString.java) ([Tests](src/test/java/solutions/ReorganizeStringTests.java)) |
 | 771 | Easy | [Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/) | [JewelsAndStones.java](src/main/java/solutions/JewelsAndStones.java) ([Tests](src/test/java/solutions/JewelsAndStonesTests.java)) |
