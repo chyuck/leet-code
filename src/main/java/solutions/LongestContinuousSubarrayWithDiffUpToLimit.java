@@ -7,7 +7,7 @@ import java.util.LinkedList;
  * Time complexity: O(n)
  * Space complexity: O(n)
  */
-public class LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit {
+public class LongestContinuousSubarrayWithDiffUpToLimit {
 
     public int longestSubarray(int[] nums, int limit) {
         LinkedList<Integer> minNums = new LinkedList<>(), maxNums = new LinkedList<>();

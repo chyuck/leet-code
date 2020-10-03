@@ -3,12 +3,12 @@ package solutions;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimitTests {
+public class LongestContinuousSubarrayWithDiffUpToLimitTests {
 
     @Test
     public void testExample1() {
         // arrange
-        var solution = new LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit();
+        var solution = new LongestContinuousSubarrayWithDiffUpToLimit();
 
         // act
         var result = solution.longestSubarray(new int[] { 8,2,4,7 }, 4);
@@ -20,7 +20,7 @@ public class LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimitTest
     @Test
     public void testExample2() {
         // arrange
-        var solution = new LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit();
+        var solution = new LongestContinuousSubarrayWithDiffUpToLimit();
 
         // act
         var result = solution.longestSubarray(new int[] { 10,1,2,4,7,2 }, 5);
@@ -32,7 +32,7 @@ public class LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimitTest
     @Test
     public void testExample3() {
         // arrange
-        var solution = new LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit();
+        var solution = new LongestContinuousSubarrayWithDiffUpToLimit();
 
         // act
         var result = solution.longestSubarray(new int[] { 4,2,2,2,4,4,2,2 }, 0);
